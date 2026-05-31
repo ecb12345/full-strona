@@ -1,0 +1,225 @@
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kursy Online Organic - Ela Cwynar-Budzińska</title>
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Manrope:wght@400;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface": "#fdf9f2",
+                        "on-surface": "#1c1c18",
+                        "on-surface-variant": "#594046",
+                        "primary": "#9a004a",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#c31161",
+                        "surface-container-low": "#f7f3ec",
+                        "surface-container-high": "#ebe8e1",
+                        "outline": "#8d6f76",
+                        "outline-variant": "#e1bec5",
+                        "background": "#fdf9f2",
+                        "primary-fixed": "#ffd9e1"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "4px",
+                        "lg": "8px",
+                        "xl": "16px",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "xs": "8px",
+                        "sm": "16px",
+                        "md": "32px",
+                        "lg": "64px",
+                        "xl": "128px",
+                        "gutter": "24px"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader", "serif"],
+                        "body": ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .organic-blob {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .organic-blob:hover {
+            transform: scale(1.02) translateY(-10px);
+            box-shadow: 0 30px 60px -12px rgba(154, 0, 74, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/20 antialiased text-base md:text-lg">
+
+    <!-- Top Bar & Header (Standardized) -->
+    <div class="bg-primary text-white py-2 text-[10px] font-bold uppercase tracking-[0.2em] hidden md:block">
+        <div class="max-w-[1440px] mx-auto px-16 flex justify-end items-center gap-6">
+            <span class="opacity-80">Bądź na bieżąco:</span>
+            <div class="flex gap-4 items-center">
+                <a href="#" class="hover:text-pink-200 transition-colors flex items-center gap-1">INSTAGRAM</a>
+                <a href="#" class="hover:text-pink-200 transition-colors flex items-center gap-1">FACEBOOK</a>
+                <a href="#" class="hover:text-pink-200 transition-colors flex items-center gap-1">LINKEDIN</a>
+            </div>
+        </div>
+    </div>
+    <header class="bg-zinc-100 border-b border-outline/10 h-24 top-0 sticky z-50">
+        <nav class="max-w-[1440px] mx-auto px-6 md:px-16 flex items-center h-full">
+            <div class="flex-grow text-xl md:text-2xl font-normal tracking-tighter text-primary-container font-headline">
+                <a href="index.html">Ela Cwynar-Budzińska</a>
+            </div>
+            <div class="hidden lg:flex gap-8 items-center">
+                <a href="szkolenia.html" class="text-on-surface hover:text-primary transition-colors font-medium text-xs uppercase tracking-wider">Szkolenia dla firm</a>
+                <a href="pary.html" class="text-on-surface hover:text-primary transition-colors font-medium text-xs uppercase tracking-wider">Warsztaty dla par</a>
+                <a href="kursy.html" class="text-primary border-b-2 border-primary pb-1 font-medium text-xs uppercase tracking-wider">Kursy online</a>
+                <a href="omnie.html" class="text-on-surface hover:text-primary transition-colors font-medium text-xs uppercase tracking-wider">O mnie</a>
+                <a href="podcast.html" class="text-on-surface hover:text-primary transition-colors font-medium text-xs uppercase tracking-wider">Podcast</a>
+                <a href="kontakt.html" class="text-on-surface hover:text-primary transition-colors font-medium text-xs uppercase tracking-wider">Napisz do mnie</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="reveal active">
+            <img src="images/hero_online_v2.png" alt="Kursy Online Hero" class="w-full h-auto max-h-[80vh] object-cover">
+        </section>
+
+        <!-- Intro Section -->
+        <section class="pt-24 pb-12 bg-surface text-center reveal active">
+            <div class="max-w-4xl mx-auto px-6">
+                <p class="uppercase tracking-[0.2em] font-bold text-primary mb-8 text-xs">Rozwój w domowym zaciszu</p>
+                <h1 class="font-headline text-4xl md:text-5xl mb-8 leading-tight">Miejsce, w którym o komunikacji może uczyć się każdy</h1>
+                <p class="text-on-surface-variant mb-12 max-w-3xl mx-auto leading-relaxed">
+                    Kursy online to dla mnie najkrótsza droga od teorii do praktyki: dostajesz konkretną technologię dogadywania się, którą możesz wdrożyć przy najbliższej rozmowie, bez czekania na termin stacjonarnego warsztatu.
+                </p>
+            </div>
+        </section>
+
+        <!-- Why Online Learning Section -->
+        <section class="pt-12 pb-24 bg-surface-container-low reveal active">
+            <div class="max-w-4xl mx-auto px-6">
+                <h2 class="font-headline text-3xl md:text-4xl mb-12 text-center italic">Dlaczego stworzyłam przestrzeń do nauki online?</h2>
+                <div class="space-y-12 text-on-surface-variant leading-relaxed text-lg">
+                    <p>
+                        Wiem, jak wygląda rzeczywistość w wielu organizacjach. Być może Twoja firma obecnie nie inwestuje w „szkolenia miękkie”, a Ty czujesz, że sposób komunikacji, jaki wyniosłeś z domu, po prostu Ci nie pomaga. Zamiast dochodzić do rozwiązań, Wasze rozmowy eskalują, a Ty zostajesz z poczuciem bezsilności.
+                    </p>
+                    <p>
+                        Wierzę, że każdy zasługuje na spokojną głowę w pracy i bliskość w domu, dlatego stworzyłam miejsce, w którym o dobrej komunikacji może uczyć się każdy – bez czekania na zgodę przełożonego czy budżet szkoleniowy.
+                    </p>
+                    <div class="space-y-6">
+                        <p class="font-bold text-on-surface">Kursy online to dla mnie wolność i skuteczność, bo:</p>
+                        
+                        <div class="grid gap-6">
+                        <div class="flex gap-8">
+                            <span class="material-symbols-outlined text-primary text-3xl shrink-0">self_improvement</span>
+                            <div>
+                                <h4 class="font-bold text-on-surface mb-2">Uczysz się na własnych zasadach</h4>
+                                <p class="text-base">Na kanapie, w swoim tempie, dokładnie wtedy, gdy masz na to przestrzeń, manewrując między milionem codziennych zadań.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-8">
+                            <span class="material-symbols-outlined text-primary text-3xl shrink-0">psychology</span>
+                            <div>
+                                <h4 class="font-bold text-on-surface mb-2">Wdrażasz wiedzę pod okiem mentora</h4>
+                                <p class="text-base">Dzięki mojemu 17-letniemu doświadczeniu w pracy z liderami i zespołami, nie dostajesz suchej teorii, ale technologię, którą możesz porządnie wdrożyć w życie.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-8">
+                            <span class="material-symbols-outlined text-primary text-3xl shrink-0">spa</span>
+                            <div>
+                                <h4 class="font-bold text-on-surface mb-2">Bez presji i ocen</h4>
+                                <p class="text-base">Masz możliwość wracania do treści tyle razy, ile potrzebujesz, by poczuć się pewnie w nowym sposobie rozmawiania.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-8">
+                            <span class="material-symbols-outlined text-primary text-3xl shrink-0">auto_awesome</span>
+                            <div>
+                                <h4 class="font-bold text-on-surface mb-2">Nowe narzędzia w Twojej codzienności</h4>
+                                <p class="text-base">Testujesz rozwiązania „na żywo”, we własnym domu czy biurze, obserwując realną zmianę krok po kroku.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- Organic Course Selection -->
+        <section class="pb-32 bg-surface reveal active">
+            <div class="max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-16 lg:gap-24">
+                
+                <!-- Organic Card 1 -->
+                <div class="flex flex-col items-center group">
+                    <div class="organic-blob w-full aspect-[4/5] rounded-[4rem_16rem_6rem_12rem] overflow-hidden shadow-2xl relative mb-12">
+                        <img src="images/kurs_sztuka.jpg" alt="Sztuka komunikacji" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <div class="text-center max-w-sm">
+                        <h2 class="font-headline text-3xl md:text-4xl mb-6">Sztuka komunikacji</h2>
+                        <p class="text-on-surface-variant mb-10 text-base leading-relaxed italic">
+                            Opanuj fundamenty porozumienia. Dowiedz się, jak wyrażać potrzeby i słuchać z empatią, by budować trwałe relacje.
+                        </p>
+                        <a href="https://www.kursokomunikacji.pl/" class="inline-block bg-primary text-white px-10 py-5 font-bold uppercase tracking-widest text-xs hover:brightness-110 transition-all hover:shadow-xl rounded-full">
+                            SPRAWDZAM
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Organic Card 2 -->
+                <div class="flex flex-col items-center group md:mt-24">
+                    <div class="organic-blob w-full aspect-[4/5] rounded-[12rem_4rem_16rem_6rem] overflow-hidden shadow-2xl relative mb-12">
+                        <img src="images/kurs_konflikty.jpg" alt="Rozwiązywanie konfliktów" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-on-surface/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <div class="text-center max-w-sm">
+                        <h2 class="font-headline text-3xl md:text-4xl mb-6">Rozwiązywanie konfliktów</h2>
+                        <p class="text-on-surface-variant mb-10 text-base leading-relaxed italic">
+                            Zmień napięcie w porozumienie. Poznaj sprawdzone techniki mediacji i radzenia sobie w trudnych sytuacjach.
+                        </p>
+                        <a href="#" class="inline-block bg-on-surface text-white px-10 py-5 font-bold uppercase tracking-widest text-xs hover:bg-primary transition-all hover:shadow-xl rounded-full">
+                            SPRAWDZAM
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-surface-container-low py-12 border-t border-outline/10 text-center">
+        <p class="text-[10px] text-on-surface-variant opacity-60 uppercase tracking-widest">© 2026 Ela Cwynar-Budzińska</p>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

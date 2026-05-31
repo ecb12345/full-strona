@@ -1,0 +1,388 @@
+<html lang="pl"><head></head><body class="bg-background text-on-surface selection:bg-primary-fixed">```html
+
+
+    <meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Manrope:wght@400;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f7f3ec",
+                        "surface": "#fdf9f2",
+                        "secondary-fixed-dim": "#ffb3ae",
+                        "on-surface": "#1c1c18",
+                        "on-secondary-container": "#7a3937",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#ffd9df",
+                        "on-primary-fixed-variant": "#8f0044",
+                        "surface-container-high": "#ebe8e1",
+                        "on-secondary-fixed-variant": "#723331",
+                        "surface-bright": "#fdf9f2",
+                        "primary": "#9a004a",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#603d44",
+                        "on-primary-container": "#ffd9e0",
+                        "on-background": "#1c1c18",
+                        "primary-fixed": "#ffd9e1",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#f1ede7",
+                        "inverse-on-surface": "#f4f0e9",
+                        "secondary-container": "#ffa7a2",
+                        "surface-variant": "#e6e2db",
+                        "primary-container": "#c31161",
+                        "surface-container-highest": "#e6e2db",
+                        "secondary-fixed": "#ffdad7",
+                        "on-primary-fixed": "#3f001a",
+                        "primary-fixed-dim": "#ffb1c4",
+                        "secondary": "#8f4a47",
+                        "outline": "#8d6f76",
+                        "tertiary-fixed-dim": "#ebbac2",
+                        "on-secondary-fixed": "#3b090a",
+                        "on-tertiary-fixed": "#2f1319",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#dddad3",
+                        "tertiary": "#66434a",
+                        "tertiary-container": "#815a62",
+                        "inverse-surface": "#31302c",
+                        "on-tertiary": "#ffffff",
+                        "background": "#fdf9f2",
+                        "surface-tint": "#ba025b",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#594046",
+                        "inverse-primary": "#ffb1c4",
+                        "outline-variant": "#e1bec5",
+                        "tertiary-fixed": "#ffd9df",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xs": "8px",
+                        "margin": "40px",
+                        "lg": "64px",
+                        "md": "32px",
+                        "xl": "128px",
+                        "sm": "16px",
+                        "base": "4px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Newsreader"],
+                        "body-lg": ["Manrope"],
+                        "headline-md": ["Newsreader"],
+                        "headline-sm": ["Newsreader"],
+                        "body-sm": ["Manrope"],
+                        "headline-xl": ["Newsreader"],
+                        "body-md": ["Manrope"],
+                        "label-caps": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fdf9f2;
+        }
+
+        /* Irregular Fluid Masks from SCREEN_174 */
+        .organic-mask-1 { clip-path: url(#blob-mask-1); }
+        .organic-mask-2 { clip-path: url(#blob-mask-2); }
+        .organic-mask-hero { clip-path: url(#blob-mask-hero); }
+        
+        /* Dynamic Wavy Transitions from SCREEN_174 */
+        .wavy-divider-top {
+            clip-path: polygon(0% 15%, 15% 10%, 30% 15%, 45% 5%, 60% 15%, 75% 10%, 90% 20%, 100% 10%, 100% 100%, 0% 100%);
+        }
+        .wavy-divider-bottom {
+            clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 85% 95%, 70% 85%, 55% 95%, 40% 80%, 25% 90%, 10% 80%, 0% 90%);
+        }
+        .wavy-bg {
+            background-image: radial-gradient(circle at 90% 10%, rgba(195, 17, 97, 0.04) 0%, transparent 40%),
+                              radial-gradient(circle at 10% 90%, rgba(143, 74, 71, 0.04) 0%, transparent 40%);
+        }
+        .mask-container { width: 0; height: 0; position: absolute; }
+    </style>
+<!-- SVG Masks Definitions -->
+<svg class="mask-container" viewbox="0 0 100 100">
+<defs>
+<clippath clippathunits="objectBoundingBox" id="blob-mask-hero">
+<path d="M0.1,0.05 C0.3,-0.05 0.7,-0.02 0.9,0.05 C1,0.1 1.05,0.4 0.95,0.7 C0.85,1 0.5,1.05 0.15,0.95 C-0.05,0.85 -0.02,0.4 0.1,0.05 Z"></path>
+</clippath>
+<clippath clippathunits="objectBoundingBox" id="blob-mask-1">
+<path d="M0.15,0.1 C0.3,0 0.75,0.05 0.9,0.2 C1.05,0.4 0.95,0.75 0.8,0.9 C0.6,1.05 0.2,1.02 0.05,0.8 C-0.1,0.5 0,0.2 0.15,0.1 Z"></path>
+</clippath>
+<clippath clippathunits="objectBoundingBox" id="blob-mask-2">
+<path d="M0.2,0.05 C0.5,-0.05 0.95,0.1 0.98,0.4 C1.01,0.7 0.8,0.98 0.5,0.95 C0.2,0.92 -0.05,0.7 0.02,0.35 C0.08,0.1 0.1,0.08 0.2,0.05 Z"></path>
+</clippath>
+</defs>
+</svg>
+<header class="bg-[#FFFBF4] dark:bg-zinc-950 border-b border-[#c2959d]/40 dark:border-zinc-800 docked full-width top-0 sticky z-50">
+<nav class="max-w-[1440px] mx-auto px-8 md:px-16 flex justify-between items-center h-24">
+<div class="text-xl font-bold tracking-tighter text-[#1F1E1D] dark:text-zinc-100 font-headline-md" style="color: #c31161;">Ela Cwynar-Budzińska</div>
+<div class="hidden md:flex gap-10 items-center">
+<a class="text-[#1F1E1D] dark:text-zinc-400 font-medium font-serif tracking-tight text-lg hover:text-[#c31161] transition-all duration-300 ease-out" href="#">Metoda</a>
+<a class="text-[#c31161] dark:text-[#e03a83] border-b-2 border-[#c31161] pb-1 font-serif tracking-tight text-lg" href="#">Szkolenia</a>
+<a class="text-[#1F1E1D] dark:text-zinc-400 font-medium font-serif tracking-tight text-lg hover:text-[#c31161] transition-all duration-300 ease-out" href="#">Coaching</a>
+<a class="text-[#1F1E1D] dark:text-zinc-400 font-medium font-serif tracking-tight text-lg hover:text-[#c31161] transition-all duration-300 ease-out" href="#">Wiedza</a>
+</div>
+<button class="bg-primary-container text-on-primary font-body-md px-6 py-3 scale-100 active:scale-95 transition-transform">Umów konsultację</button>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="flex flex-col">
+<div class="w-full h-[600px] overflow-hidden">
+<img alt="Professional boardroom background" class="w-full h-full object-cover filter brightness-95" data-alt="Komunikacja to sztuka. Naucz się jej. Profesjonalny portret Eli Cwynar-Budzińskiej na tle stylowego przeszklenia." src="https://lh3.googleusercontent.com/aida/ADBb0uh82OQJK1vTr9MgjTOOjApz0j9fbC0NI_sllh_PnfhyrKXvv1LyOpdarsXEYFfzbuYSwz4t988n56D2zhIAZtES_-o0DZcmQq8q4VF3Cg0b28m-EJ8rkl205l_MfHqePkSkIO-l3AnRjW8XOFFOXSGUOo1vJPxHUONXUMy0WNGLkhhacV3Ff8nCOBBuogWmLzvpmragWpsU-Ey9xwZtyJEgRky52pYmq4xBc2Ohc9XbYJLRjY-2GgkiX3hshS6WhTR_fDFZy6Bdv48"/>
+</div>
+<div class="bg-surface py-xl">
+<div class="max-w-[1440px] mx-auto px-8 md:px-16 grid grid-cols-12 gap-gutter">
+<div class="col-span-12 md:col-span-10 lg:col-span-8">
+<span class="font-label-caps text-primary uppercase tracking-[0.2em] mb-sm block">Business Training</span>
+<h1 class="font-headline-xl text-on-surface mb-md">Zarządzanie napięciem w zespole. Skuteczna komunikacja tam, gdzie stawka jest najwyższa.</h1>
+<p class="font-body-lg text-on-surface-variant max-w-2xl mb-lg">Wykorzystuję 17 lat doświadczenia w szkoleniu liderów największych organizacji, by uczyć Twoich ludzi, jak budować autorytet i porozumienie w sytuacjach stresowych.</p>
+<div class="flex flex-col sm:flex-row gap-sm">
+<button class="bg-primary-container text-on-primary font-body-md px-8 py-4 text-lg hover:brightness-110 transition-all">Umów konsultację dla biznesu</button>
+<button class="border border-outline text-on-surface font-body-md px-8 py-4 text-lg hover:bg-surface-container-low transition-all">Nasze podejście</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Obszary wsparcia -->
+<section class="py-xl bg-surface">
+<div class="max-w-[1440px] mx-auto px-8 md:px-16">
+<div class="mb-lg border-b border-outline-variant pb-md flex flex-col md:flex-row md:items-end justify-between gap-sm">
+<h2 class="font-headline-lg text-on-surface">Obszary wsparcia</h2>
+<p class="font-body-md text-on-surface-variant md:max-w-xs italic font-headline-sm">Holistyczne podejście do dynamiki grupowej.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mt-lg">
+<div class="p-md bg-surface-container-low border border-transparent hover:border-outline-variant transition-colors group">
+<div class="w-12 h-12 flex items-center justify-center bg-primary-container text-on-primary mb-md">
+<span class="material-symbols-outlined">leaderboard</span>
+</div>
+<h3 class="font-headline-sm text-on-surface mb-sm">Szkolenia dla Liderów</h3>
+<p class="font-body-md text-on-surface-variant mb-md">Budowanie autorytetu opartego na zaufaniu, trening asertywności oraz skuteczne zarządzanie konfliktami wewnątrz organizacji.</p>
+<ul class="space-y-base font-body-sm text-on-surface border-t border-outline-variant/30 pt-md">
+<li class="flex items-center gap-xs"><span class="material-symbols-outlined text-[18px]">check</span> Budowanie autorytetu</li>
+<li class="flex items-center gap-xs"><span class="material-symbols-outlined text-[18px]">check</span> Asertywność lidera</li>
+<li class="flex items-center gap-xs"><span class="material-symbols-outlined text-[18px]">check</span> Zarządzanie konfliktami</li>
+</ul>
+</div>
+<div class="p-md bg-surface-container-low border border-transparent hover:border-outline-variant transition-colors group">
+<div class="w-12 h-12 flex items-center justify-center bg-primary-container text-on-primary mb-md">
+<span class="material-symbols-outlined">groups</span>
+</div>
+<h3 class="font-headline-sm text-on-surface mb-sm">Komunikacja w Zespole</h3>
+<p class="font-body-md text-on-surface-variant mb-md">Praca w sytuacjach wysokiego napięcia, techniki deeskalacji oraz zapobieganie wypaleniu relacyjnemu w grupach.</p>
+<ul class="space-y-base font-body-sm text-on-surface border-t border-outline-variant/30 pt-md">
+<li class="flex items-center gap-xs"><span class="material-symbols-outlined text-[18px]">check</span> Praca pod napięciem</li>
+<li class="flex items-center gap-xs"><span class="material-symbols-outlined text-[18px]">check</span> Deeskalacja emocji</li>
+<li class="flex items-center gap-xs"><span class="material-symbols-outlined text-[18px]">check</span> Prewencja wypalenia</li>
+</ul>
+</div>
+<div class="p-md bg-surface-container-low border border-transparent hover:border-outline-variant transition-colors group">
+<div class="w-12 h-12 flex items-center justify-center bg-primary-container text-on-primary mb-md">
+<span class="material-symbols-outlined">handshake</span>
+</div>
+<h3 class="font-headline-sm text-on-surface mb-sm">Mediacje Biznesowe</h3>
+<p class="font-body-md text-on-surface-variant mb-md">Rozwiązywanie sporów wewnętrznych, wsparcie w trudnych negocjacjach oraz przywracanie płynności komunikacyjnej.</p>
+<ul class="space-y-base font-body-sm text-on-surface border-t border-outline-variant/30 pt-md">
+<li class="flex items-center gap-xs"><span class="material-symbols-outlined text-[18px]">check</span> Spory wewnętrzne</li>
+<li class="flex items-center gap-xs"><span class="material-symbols-outlined text-[18px]">check</span> Trudne negocjacje</li>
+<li class="flex items-center gap-xs"><span class="material-symbols-outlined text-[18px]">check</span> Przywracanie relacji</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Metodologia -->
+<section class="bg-surface-container-high py-xl">
+<div class="max-w-[1440px] mx-auto px-8 md:px-16 grid grid-cols-12 gap-gutter items-center">
+<div class="col-span-12 md:col-span-5 mb-lg md:mb-0">
+<img alt="Metodologia Ela Cwynar-Budzińska" class="w-full aspect-[4/5] object-cover" data-alt="A portrait of a professional female consultant in her late 40s, exuding intelligence and empathy. She is dressed in high-quality minimalist business attire in neutral sand tones. She is sitting in a sun-drenched, modern office with soft shadows and architectural lines. The image should have a fine-art editorial quality, with a shallow depth of field and warm, natural lighting that emphasizes human connection." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkzX3iqEvTEBiHrUrgy1-6aK7cL5At6I1_9AAX-_X0QuBhgJbzux4Vw94_mQU3sy7WGXGT2002o2oiqKw85zDKBH4bVotoiHbYXnRsUxBNhycZygYa6-6nNPRQqE3cNvSZfQuTk3gZQ3Ndxwi9sO8J9sxapeL9YeTl7gQXadFkz0DRfHDhClAk_jEIEqBw2qfvYW6NRJ2VqGUKCItDxdBQvrPIwVrgN1iYQ4xqjeonJOPIRmvWzozhZuu4Ktgg4_z5CMlb0VykElTo"/>
+</div>
+<div class="col-span-12 md:col-span-7 md:pl-lg">
+<span class="font-label-caps text-primary mb-sm block">Metodologia</span>
+<h2 class="font-headline-lg text-on-surface mb-md">Dlaczego to działa?</h2>
+<p class="font-headline-md text-on-surface mb-lg italic font-normal leading-relaxed">
+                        "Łączę twardą wiedzę o zarządzaniu z psychologicznym wglądem w mechanizmy przywiązania i reakcji na stres."
+                    </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
+<div>
+<h4 class="font-label-caps text-on-surface mb-xs border-b border-primary/20 pb-base">Empatia Inteligentna</h4>
+<p class="font-body-md text-on-surface-variant">Zrozumienie potrzeb pracownika bez utraty celu biznesowego.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-on-surface mb-xs border-b border-primary/20 pb-base">Neurobiologia Stresu</h4>
+<p class="font-body-md text-on-surface-variant">Praca na biologicznych podstawach reakcji zespołowych.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Detailed Training Modules -->
+<!-- Module 1 -->
+<section class="relative bg-surface-container-low py-xl overflow-hidden">
+<div class="absolute inset-x-0 top-0 h-24 wavy-divider-top bg-surface -translate-y-1"></div>
+<div class="max-w-[1440px] mx-auto px-8 md:px-16 flex flex-col md:flex-row items-center gap-xl relative z-10 py-12">
+<div class="w-full md:w-1/2 order-2 md:order-1">
+<span class="font-label-caps text-primary mb-base block opacity-70">MODUŁ 01</span>
+<h2 class="font-headline-lg text-on-surface mb-md leading-tight">Empatyczne Przywództwo</h2>
+<p class="font-body-md text-on-surface-variant mb-lg max-w-lg">Naucz się budować autorytet oparty na zaufaniu i autentyczności. Szkolenie koncentruje się na technikach słuchania, rozumienia potrzeb zespołu oraz skutecznym wspieraniu pracowników w ich rozwoju.</p>
+<button class="group flex items-center gap-4 bg-primary-container text-on-primary px-8 py-4 font-label-caps tracking-widest hover:brightness-110 transition-all active:scale-95">
+                        Zapisz się 
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<div class="w-full md:w-1/2 order-1 md:order-2">
+<div class="aspect-square md:aspect-[4/3] organic-mask-1 overflow-hidden shadow-xl hover:scale-[1.02] transition-transform duration-500">
+<img alt="Leadership" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJY0iIfeYj_EOHvIALe088rMwQMkweCgj0IZhAt3M2t1-amOzP064-stkdveHkAeWJ5bWqCp5c1NMUwMjMirNiHHEVvDH8fvEZW-OnTSyyW8Rg4FgixliRYTf5auBXJHlaC0qyoMtUShLQACkSvXF_9PV36F4b08sIFYqIkKLAF4Foy1rYckqJy2GumpUa3yX7sgCyn8GhM8g0JSQq7nM_9HXT8M0vi-YxanZNkiy7d848P7yXnPXj6lKtNTEhvwPmYnZ8THfQqdJ1"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Module 2 -->
+<section class="relative bg-surface py-xl overflow-hidden wavy-bg">
+<div class="max-w-[1440px] mx-auto px-8 md:px-16 flex flex-col md:flex-row items-center gap-xl py-12">
+<div class="w-full md:w-1/2">
+<div class="aspect-square md:aspect-[4/3] organic-mask-2 overflow-hidden shadow-xl hover:scale-[1.02] transition-transform duration-500">
+<img alt="Team Communication" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYkmeW9Tl7cQs2M342bo-PvucKBk5guUpVUI3ErwPGBfUsdsgziGRoR1d7wCcb3zf3QwIWCrOuNuX9g5f5ORUfJRjgvJYcl_RNoYlU__xWXG27s_qSCLj0FuxtpsXEin5HRX6d_0m6iX0LmjZGBgtlwdyVGJm2qYj7ZU5rC_cuAuPMLSHEjVJUyhfXPzcQ_vUxzSsLtpZQdshRavV1sgN7iWfy0fER08gWGhZKNYLtnC3UUdvvE4w_vLfs8ZVhCsGYtpsQt_JuhSj9"/>
+</div>
+</div>
+<div class="w-full md:w-1/2">
+<span class="font-label-caps text-primary mb-base block opacity-70">MODUŁ 02</span>
+<h2 class="font-headline-lg text-on-surface mb-md leading-tight">Komunikacja w Zespole</h2>
+<p class="font-body-md text-on-surface-variant mb-lg max-w-lg">Klucz do efektywności leży w zrozumiałym przekazie. Podczas warsztatów pracujemy nad barierami komunikacyjnymi, modelami jasnego wyrażania intencji oraz budowaniem przestrzeni do dialogu.</p>
+<button class="group flex items-center gap-4 bg-primary-container text-on-primary px-8 py-4 font-label-caps tracking-widest hover:brightness-110 transition-all active:scale-95">
+                        Zapisz się 
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Module 3 -->
+<section class="relative bg-surface-container-low py-xl overflow-hidden">
+<div class="max-w-[1440px] mx-auto px-8 md:px-16 flex flex-col md:flex-row items-center gap-xl py-12">
+<div class="w-full md:w-1/2 order-2 md:order-1">
+<span class="font-label-caps text-primary mb-base block opacity-70">MODUŁ 03</span>
+<h2 class="font-headline-lg text-on-surface mb-md leading-tight">Kultura Feedbacku</h2>
+<p class="font-body-md text-on-surface-variant mb-lg max-w-lg">Informacja zwrotna to dar, nie krytyka. Uczymy, jak konstruować feedback, który motywuje do wzrostu, oraz jak przyjmować uwagi z otwartością, tworząc środowisko psychologicznego bezpieczeństwa.</p>
+<button class="group flex items-center gap-4 bg-primary-container text-on-primary px-8 py-4 font-label-caps tracking-widest hover:brightness-110 transition-all active:scale-95">
+                        Zapisz się 
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<div class="w-full md:w-1/2 order-1 md:order-2">
+<div class="aspect-square md:aspect-[4/3] organic-mask-hero overflow-hidden shadow-xl hover:scale-[1.02] transition-transform duration-500">
+<img alt="Feedback Culture" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxz_iVaFfqBgpz53qxT0UA_xcFlnlZBdaJ33iwe_dr_LmV2UvuAAx8fy1aIXefwPNlZKJ23FH-wJYpYBr4QV4yYNQnYVSpqWOjwfn8dnT3uWapY-x4XLOwl0Sgr5k8Ql_xbKslw97JaoHtZdlyfS664sHd7BbhqoqYuFCIDYZEpzmNGduPHMJ9FfIJlM7B4dexQDt20QisW8rG6VFOb3eB8U6Ynw4ngoaGZcrCRVShQ-pBErw-yDN4RRfiafuAnUycveJAhXqibreO"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Module 4 -->
+<section class="relative bg-surface py-xl overflow-hidden wavy-bg">
+<div class="max-w-[1440px] mx-auto px-8 md:px-16 flex flex-col md:flex-row items-center gap-xl py-12">
+<div class="w-full md:w-1/2">
+<div class="aspect-square md:aspect-[4/3] organic-mask-1 overflow-hidden shadow-xl hover:scale-[1.02] transition-transform duration-500">
+<img alt="Conflict Management" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC83oNLL7KdtOOkAKwRTxL1FB_zzbN7bHA2tFqTTzRq0CQWRzHSC_ejEjFpwiZA9p4GTRciRdqqCv1aqjsmzHFnOehefxe9EU1x37lvBKIBj2hIwPowfVgGD_tX4dwgsD6qIeiQ8rNc_gdLRRBsUGg26_hDZthTcGQ2WY75jwlQv0LizK1WiYeP1S0WjFr2iRUvsoA7I5X5Xp42dAc3_lpDzmJmD8-814QYMuSL4XVCBEqPLYAo-9NxDszInozryAxypDRVaUvat-QM"/>
+</div>
+</div>
+<div class="w-full md:w-1/2">
+<span class="font-label-caps text-primary mb-base block opacity-70">MODUŁ 04</span>
+<h2 class="font-headline-lg text-on-surface mb-md leading-tight">Zarządzanie Konfliktem</h2>
+<p class="font-body-md text-on-surface-variant mb-lg max-w-lg">Konflikt może być paliwem dla innowacji. Szkolenie dostarcza narzędzi do deeskalacji napięć, mediacji oraz przekuwania różnicy zdań w konstruktywne rozwiązania zespołowe.</p>
+<button class="group flex items-center gap-4 bg-primary-container text-on-primary px-8 py-4 font-label-caps tracking-widest hover:brightness-110 transition-all active:scale-95">
+                        Zapisz się 
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Module 5 -->
+<section class="relative bg-surface-container-low pt-xl pb-32 overflow-hidden">
+<div class="max-w-[1440px] mx-auto px-8 md:px-16 flex flex-col md:flex-row items-center gap-xl relative z-10 py-12">
+<div class="w-full md:w-1/2 order-2 md:order-1">
+<span class="font-label-caps text-primary mb-base block opacity-70">MODUŁ 05</span>
+<h2 class="font-headline-lg text-on-surface mb-md leading-tight">Asertywność i Granice</h2>
+<p class="font-body-md text-on-surface-variant mb-lg max-w-lg">Budowanie asertywnej postawy w relacjach zawodowych. Uczymy jak stawiać zdrowe granice z szacunkiem do siebie i innych, co przekłada się na mniejszy stres i higienę pracy.</p>
+<button class="group flex items-center gap-4 bg-primary-container text-on-primary px-8 py-4 font-label-caps tracking-widest hover:brightness-110 transition-all active:scale-95">
+                        Zapisz się 
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<div class="w-full md:w-1/2 order-1 md:order-2">
+<div class="aspect-square md:aspect-[4/3] organic-mask-2 overflow-hidden shadow-xl hover:scale-[1.02] transition-transform duration-500">
+<img alt="Assertiveness" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCG2wIR8CWqArIEE03Gm-PwoZRki5tKnSNfDsyEUJUOXDOpnxssnuHP2X0XnZzP1gX5kiZBQ_WH5aqLQ2Zi_VOgIAznavNFDbZtshETy4CoVTwSZjy2ItkTLIqWosg6_jbMzYElTQS9A-qRsbkInlNseNC2nlxXihpFKYHVCwxSSq_D8finxBoCIkkOcEy1CiUlpc0Cdee3IpxGuWURReZlwal3OOTI0nTHdHlw_0gAZrHT0uI0PmshAEQZLfdz8NDMtpHptmFxP1s"/>
+</div>
+</div>
+</div>
+<div class="absolute inset-x-0 bottom-0 h-24 wavy-divider-bottom bg-surface translate-y-1"></div>
+</section>
+<!-- Zaufali mi liderzy organizacji -->
+<section class="bg-surface py-xl">
+<div class="max-w-[1440px] mx-auto px-8 md:px-16">
+<p class="font-label-caps text-center text-on-surface-variant/60 mb-lg">Zaufali mi liderzy organizacji</p>
+<div class="flex flex-wrap justify-center items-center gap-xl hover:grayscale-0 transition-all duration-700">
+<img alt="BNP Paribas" class="h-8 md:h-10 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" src="https://lh3.googleusercontent.com/aida/ADBb0uhIs05NYqS9cMjXslf6lPK6N0qh_Hbf1uSb_RLXRcY5lk6j7Il_5-prxzm1KBSXYpL8m6UGpGEs4FitpiEF5eScMPIZzKu0cApri1xhWrCd0tPm2YgG1iLpiMzJ7lw3jVuj8DiPIAAdLGL5ycbs1p10frs3GQ4XVTv_iWSK4ZTyY343B9hkGTzlG5PDhzV1Jaz1-8xGtlNw-2pZi07cFcMCmHj4rOlktvFxnYwwWxooZcgWTOrYaKkbof3GtIvEywjJK5ThnOy1X3A"/>
+<img alt="Electrolux" class="h-8 md:h-10 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" src="https://lh3.googleusercontent.com/aida/ADBb0uie6wSgHpCLt0hFggRjHMWk3j7slg4Sv91BYkOUO6HyGMzkGOw4qILDyS7Qrbf9PEjZANuEnUNxpn0RsVp9U6qEw2l9pbShqX8N8pMBLfN644pisYQf8cwV_2NdPdrxvJ69sdU3kVN8IwwStk2-Lw_uYm4-VUPUu8A7gu5gyDIdRcZLXQuB-6cebmglWDko0OC6XTeYsMetOG1o1L60hAKvPTy4LR7P3nyVdj-AQiVPJ-kv8CLCYiaFHsld3pzrlR0Ihu_pNccIY7I"/>
+<img alt="DLA Piper" class="h-8 md:h-10 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" src="https://lh3.googleusercontent.com/aida/ADBb0ug9PjkR71BQ4EJRTnJZnTPjv49LT-Y2aaNlcIkZ-ECs5rXTdYtN9mJytiuds4TISanGTcLHvMEoMjbkHgpZwaAtwIZqkcbdtLpfyXKBSIa29ZMW0tO4y7AO6ZDp1kxfefdURfkZNleN6BbXOHgy8wix4T1ciOq8mdS7gYv5nC4pEv-zBMPXa9Yv4j6B6ZWQYaVIeLC_DQGkUykhGEtbRTot5-kXD6Ie7MKb9p6nlMuUAJpVsxwcn5c2gNGQZWrNsdbiFOD4R3PQgc8"/>
+<img alt="Mota-Engil" class="h-8 md:h-10 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" src="https://lh3.googleusercontent.com/aida/ADBb0ujfExYs2FzKNoVvxLgIgzI4io9gD3GcsZLBWB1yL2-xV_PiKB0rf5WCvqgZBoEEXjr9UjdFdygcGyEYlTMqz0lsuecfdYm1zFfRV7xnSpkONf9c5DAPeEkxJDQJnO2GbnXwgJgdSUs8KnLGEkNYSPZOGwanlVT_RvzeOmV4QHQbFh6QuQQzIPSndO36rto_zZw4ebh1Hhwgrzz_VlJosoEHDUCQx4DCkqLiWLB9rwf2mIWrY3P8nxLhnB5F2CFCrr7_6mqYBDKgJQ"/>
+<img alt="Herbalife" class="h-8 md:h-10 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" src="https://lh3.googleusercontent.com/aida/ADBb0uiC9gNa9GfYhV0tA1YXLd1Zs25L3EVawksmb0sFKDIR6zu-2kxO3_5IqRLbBSV_e8D1_PXbwgNNwSvLo-FtZJi0c2oFBR2tgEXTEh5tt03hjRFRnHt3JKr1NVWB6ANTJJ3vhi09DOxXsVHPSDKsYyjidY0m6UVhgHOG4S8ibiD0NQHieXDLwBmPzH-v79AOYN1bHY4q6RoAvsgwv0R6aq_eCW2N1B1j2ZIPfKCk3MyoxYGQ2OA12gdmZFjGpLF0G0dJ9quwYi6XxeI"/>
+<img alt="Akamai" class="h-8 md:h-10 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" src="https://lh3.googleusercontent.com/aida/ADBb0ujGF2jIFHulZNIxBSvEFPYRfzYoyl9V9PXfW7c_D1-VMxcTZdU9ZJunMQl-PY_KrZ8JsFc5eY6W5Q8CLzO7Q72Ymy7RjrsXUBP14nLEowAqxLYxUv3lvEWyp2keiTK8x8Ioiw_Xd9967iplOGKMg_4aFeM6pYl6M2gYn7iNKrGAbIzakSxjN8XGJvF0ndLSvTaWFoDz-rbca083Y6pUqmvHf12pxuzPKIDfC2uARxpI8Er1w_QYImriXD6suX3S4mQZL3M4GHw039o"/>
+<img alt="Allfunds" class="h-8 md:h-10 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" src="https://lh3.googleusercontent.com/aida/ADBb0uhSP7ma6brnLR0HXEdPAzt4XOWBSBnahXhrqGsB6ZMxUtBNUa9Q3DKnv4XM9HindOcG52nfeHht8qrjqsuQCYQRqldSNTbOiHR46KCQcC8Rb0XRAKOL5l-NjOruDxR9M2OPrtxZDfWlWiuNL-ATUOVvYu8pncRaqoD932DZ3hNvetPEeeuPwPoJJX2AkvBNRHpA2AQYcShQlU-DQ96_eCRJPq9e2ts8Qdx4h8UOnH1lYAELvOxx3JjrBH3BWplWgtpW36B3qpsCTw"/>
+<img alt="Heineken" class="h-8 md:h-10 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" src="https://lh3.googleusercontent.com/aida/ADBb0ugK_cCPc2uxt81nQE1hc26IBkN3T_MFp1Xk9pFKVAMcByPzTQYm2vSW-68FEyLmyU5K052Le22PE-zaSGDbiTOOL8rD9WxbAf_Mg_oqNSGwuBdBAviBe3H0F8emzXtDeSV6QJivXcZfCaFk8rNLIf7Ox9_a2jTBrOfQG1ewHMzHCIBMl1rhD9WAO5lKEkOkIhC9A4hRJbxqGV9KIe_pwAmuRsQBrXLQG6M7mvKpKeUmuCsMaRaOH0SPC0PRv4kadhvjAxYaGl6AV2g"/>
+<img alt="Motorola" class="h-8 md:h-10 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" src="https://lh3.googleusercontent.com/aida/ADBb0ujyXLMeQLQ8t5ZcCn7sk2wlTeOA0DkzxpcQf5potNegdAKusJKQSoRFBKX_Gjaqda59YzcwQXSZn7bBD1BOorUfPNE_yr0zVWHRB0LOgJ-sT8ZVPo-VSXaQWv0SdaaQLyASHzryeugeHFiyyFC6XQAFUhYKVYchYxymiBoD6m99F8ZsYcUml94rV1Fe5quoDeXhHdQ3K3-_Q6we7aLkGX2MJb2Ge9Cf8u0A6d0eHRORVD1MZbjD1QzYjEFCHpQWkiyNpZgQNyUE1A"/>
+<img alt="EY" class="h-8 md:h-10 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" src="https://lh3.googleusercontent.com/aida/ADBb0ujeBm1uZuMocHlbn5WxYW9lGJWIcoXXBas5_1L_HQIcjz_BRPB0919lUyHQzBMzYxRCMU5VUKlBWTEwHcV3Mudf5IET_Q8W2n1Px71tycPuJDqnMez2TzqrlsnZgJQRHSOpkwdYvjP8vnd1fZe5jj1H10xSiCnBSgiYcwKqOCPsUi5tKtHN3voMg45vIRIEoppKb1k3n7H1SKr_8_lhd7_tfnMOuIhiEDsgT6efoo3S_nEit9055NBc-ehbG0d68ZyF9G2jSL4jlQ"/>
+<img alt="Orlen" class="h-8 md:h-10 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" src="https://lh3.googleusercontent.com/aida/ADBb0uixtMbv5SF8IvmAGD6SNYJFU6eJUCLFvlwV1p1btXad161_u9zGPitF1v2PypwNVtBEs4HzeWsD-DhAXWbZWFZxJlOle6SvdVkGWpQVUl8-lG5W79WmuP1rK316ygxm1qRWVV8sXnF-UY-ArwqH83MVNGw4OJanNSzV2enljqtdZ91am7NtwsmapGMebgNUDfSgqJW7uXUyKI4oaNJIDXA1bJ7ui9nx0kn7e2OBeESyjGepCrBbaw_CkpSH7HWtLi30s-yhT5fNitQ"/>
+<img alt="Aon" class="h-8 md:h-10 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" src="https://lh3.googleusercontent.com/aida/ADBb0ugE6KIoSlUnxC_e-gMlmWrGaHfV9DjudCezNrHXL4Gh5zr2x-10a3qtkFq7QORQmds__B7Zm49EqC_V-TJbAOyEKWMjb6fC4xD926k5BsO7XoiuncK7Zu9EFMAtbf3DjHXItH3T_fuiEj2A_SIXFfXmg8ApuPgsYugRwqdKPLp1dBUr9QXuMMw-6NmC8m9rNnY-lbl4sKpPt4lb0t3w9tvlNLomB_Ynn27GMKMO8yw_T82Fv4zHZoZVIWgVK_Ic4ggwxDpN_1k6d94"/>
+<img alt="UBS" class="h-8 md:h-10 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" src="https://lh3.googleusercontent.com/aida/ADBb0ujgFGykTVKQW7UqdypcbK9AbC3MC1RLVaVzH2E1PfNjDzT8rGNtDFMgivlEpiQW972KWtuLvlpsLBc1uNYwYL19QENfGE8GHu2mo6NpSJ4WH5uRV2uYBIK_V0MSTt6wodbT5KgwrWuRZMxesvaLuRnK1Y_p3Kqu3khERYUZ3mhY-1lwxgRGEnjZqM7RgtWS8aFZUuXWeUlcXamBnRHMXSwasYt9OYb1W89tRzPheqDEaDbaNQwCnYUGQ0Av135ewwqWj9m1yBasoQ"/>
+<img alt="Pandora" class="h-8 md:h-10 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" src="https://lh3.googleusercontent.com/aida/ADBb0ujkzu4wo946bmk5P3E_e6B2maM6xPPOBbUg9qr9vTdEz1mswMNjn-bVXS74uFAAqC2OaPXtstUS2PMSDfteY-M3UXLBxq5EZdlTnKY7uydA9ZHii2L1nEhp5VpJkvWE6u_FMuI5dFbBPwLDWLi1GPBQbIqiFZHQ7mkun1Id87mkMIhap32nXn9xb3jEXkqXgl9_Uya47zfoCtR7NHRFSV-RecJeI_cJYPcHno8zB-gV497P16tyXFSLVg84jsJOaARfRddCNVRGT30"/>
+<img alt="Avanade" class="h-8 md:h-10 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" src="https://lh3.googleusercontent.com/aida/ADBb0ugmZp_a92HGJrhULeD_B7yxyLs4OvYlVC9Xd_hu4kzNOTOJcGQVulbGU8x09bvcGxTQbPRoXWoQb53sSe3V8Lql9eC-2K7LUdj7fhi5pk7ixUVRp_dlyX77zd9V8dfSvx6E06PozsuWPpqbWxd2RIKhMFC-2CZ7kgXAWnR7aTbk8jYyJnJgb7sV4N1fdbtyCJIuTLWt-q1VD9PzmrrRf5HSOuTAIC9Fjf4jny_nwx7oJhuWxDrUTxUjZO7oKcioABHr7s_SwQIgFuY"/>
+<img alt="Schibsted" class="h-8 md:h-10 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" src="https://lh3.googleusercontent.com/aida/ADBb0uhhe2ixG3_LBCBLoUXi1XBouPqdfeXn5-PDS9Y8j4qo9hXtR6i7ieQqloPMTVHGLieEyIMv1_klQl5POxn60l0cVz4_eHzLTDbM1cioFPyMQQ_G3Nft29-amTt1QXKWQY-5Tsok5y4o5tkhuxkiOYDJxwjugYGv2hSzn8t43XD6d4I4ZLumWYF7t0FUWzj2wGd1w4Mkz7vjCTdQ2WWgaC-cHD2pGSOprrld_HT22iDrQNSWKjOhTA_IR0MgZO3yep5KaDyg2-9gUDo"/>
+<img alt="PwC" class="h-8 md:h-10 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA4lqSJPDyIMHZTgden7RsamIPHC7Fd4K4ML1lcG62U15kkMQ7F6X2BSd4QdZ_0JCzJZGiHif5-k2BwZFZtWLrvyi72EXS-apJ08ZOL516khfbBVInI2um45Zv7Q9FDfSqLSrrj20IQYKpcKtvmd3f27g5QbAADdCbva2gM_xWZRAh4CZcnag_TWul4TYIYQzUbDJz6eYboMo96BP-dIxQSNU8OGq1JlxjaBH4Udz0z4onQlpJnkpZCw4OIIhApLlBJC-ZmGG51JcB"/>
+<img alt="ABB" class="h-8 md:h-10 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" src="https://lh3.googleusercontent.com/aida/ADBb0uh--FS9Bxs7wbIeCHzkxyVniUlMIZvynqyC_z0WWCAfuxj8FdrXux3p0qsKORYMRw457OryekdLMXj7VkD53U4nlYBjBEzc-KYfKUS4yAFNbSBgjMcVF4NzTPRK3_2Mn2-RS9lTnmVAFUVZ3PQEtuIFy6V55ioWwJ8vhp31cCdgMkIQWB3Y2cWQ3yuaAIQExWXf6BJEf4m3SL87TEXCllXS6AZRyq1tFOPqLDxpqYRUfGWbI9nBhyto-4Adwv0O0_qaYTSQqUfvqfQ"/>
+<img alt="Rockwell Automation" class="h-8 md:h-10 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" src="https://lh3.googleusercontent.com/aida/ADBb0uiyslhdNcvJF1STChDZNIs93Ti9rPDE-KrbeLukXSFCAFMZXvh4yuNI5bIwnYoME8Jks8T8PqCuCfebKOY6h3BTcBG0wQR62qcLlQSVYWdnSco5z7UTVuMOfI0n6o1zhBozdvoGAraevBaiVvFRH9ADwRQLGuk6Fq9QssSDNk8e_8fsip_kzvOfkoPf4sJ7XVJmD763f731RWgTa-TDv_ptceW1RQ2CxwjIWMT0y2rz86zTmjyiU05DoVyP_Yvvgof_FdmjZsxaijA"/>
+<img alt="Zooplus" class="h-8 md:h-10 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" src="https://lh3.googleusercontent.com/aida/ADBb0uhcP1jsrxfvzbaCKHLiLKn5ZDzeSh1ipP0gu-DxRMNw_gS740cxxdAVfu-OwXtyCRC9dOSmZC8l3kEfXtduxnuOgMvu9xDwtagXLtFRXHrMU2SBaJhRbWfwwKpLc5qLq6jqjTLgdrJAKoTfOyGcLqIwdjhCmPw1pd72y1_7GO9pnUh5OSXdFM5dzOXgVOzkCMHhMZds5YbWQppVA9nlpIa04W-cUs9XL3PadIjWeLLUAqu3U1EQY2lIPV5FiE-Ohvkck6rIXxhQKw"/>
+<img alt="Deloitte" class="h-8 md:h-10 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" src="https://lh3.googleusercontent.com/aida/ADBb0ug9zA5DxN5VkfIu6MGqzfSRYxtIAuzoy7OY2BXRg22u7tpaOywrXeCKZr4HxSOm8djlaC0ZBMhn8RsPRUNvJVRB3J2JreupaWfLv1XHuDRRc-OQcLWwL0SieOrtO3h4A6LTrm_P332ZrrUnZxwfnhYv3JFU-Zxs9Ur4gIHQ3z4AG_aiZBKm_CdZueEBW14iq5Pn93grG33MGIOVYLajJpjsbe6luMuDRhfWowQk_Fvj0qBKo14qKI15INTNvK3yoWT4Y3_uKD6DOO0"/>
+</div>
+</div>
+</section>
+<!-- Tailor-made Training Section (New) -->
+<section class="bg-primary-container relative overflow-hidden py-24">
+<!-- Subtle artistic line-art element -->
+<div class="absolute inset-0 pointer-events-none overflow-hidden opacity-20">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+<path d="M-100,500 C150,300 350,700 500,500 C650,300 850,700 1100,500" fill="none" stroke="white" stroke-width="1.5"></path>
+<path d="M-50,550 C200,350 400,750 550,550 C700,350 900,750 1150,550" fill="none" stroke="white" stroke-width="0.5"></path>
+</svg>
+</div>
+<div class="max-w-[1440px] mx-auto px-8 md:px-16 relative z-10 text-center">
+<div class="max-w-3xl mx-auto">
+<h2 class="font-headline-lg text-white mb-md">Szkolenia szyte na miarę</h2>
+<p class="font-body-lg text-white mb-lg leading-relaxed">
+                        Potrzebujesz programu dopasowanego do unikalnych wyzwań Twojego zespołu? Stwórzmy razem szkolenie, które połączy precyzję rzemiosła z polotem sztuki komunikacji.
+                    </p>
+</div></div></section></main></body></html>

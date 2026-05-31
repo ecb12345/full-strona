@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Ela Cwynar-Budzińska - O Komunikacji Po Ludzku</title>
+    <meta name="description" content="Odzyskaj sprawczość w każdej rozmowie. Sztuka komunikacji i psychologia relacji dla biznesu, par i jednostek.">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@400;500;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries" data-cookieconsent="ignore"></script>
+    
+    <!-- Custom Tailwind Config -->
+    <script data-cookieconsent="ignore">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface": "#fdf9f2",
+                        "on-surface": "#1c1c18",
+                        "on-surface-variant": "#594046",
+                        "primary": "#c2185b",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#f48fb1",
+                        "surface-container-low": "#f7f3ec",
+                        "surface-container-high": "#ebe8e1",
+                        "outline": "#8d6f76",
+                        "outline-variant": "#e1bec5",
+                        "background": "#fdf9f2"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "4px",
+                        "lg": "8px",
+                        "xl": "16px",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader", "serif"],
+                        "body": ["Manrope", "sans-serif"]
+                    },
+                    animation: {
+                        marquee: 'marquee 40s linear infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-15px) rotate(2deg)' },
+                        }
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .art-shape {
+            pointer-events: none;
+            z-index: 0;
+        }
+        /* Vesica Piscis Shape */
+        .vesica {
+            width: 300px;
+            height: 200px;
+            background: currentColor;
+            clip-path: ellipse(50% 50% at 50% 50%); /* Simplified, real one is intersection */
+            mask: radial-gradient(circle at 35% 50%, black 50%, transparent 50.5%),
+                  radial-gradient(circle at 65% 50%, black 50%, transparent 50.5%);
+            mask-composite: intersect;
+            -webkit-mask-composite: source-in;
+        }
+    </style>
+    
+    <!-- MailerLite Universal -->
+    <script>
+        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+        ml('account', '2343740');
+    </script>
+    <!-- End MailerLite Universal -->
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/20 antialiased text-base md:text-lg overflow-x-hidden">
+
+    <!-- Top Bar -->
+    <div class="bg-primary text-white py-2 text-[10px] font-bold uppercase tracking-[0.2em] hidden md:block">
+        <div class="max-w-[1440px] mx-auto px-16 flex justify-end items-center gap-6">
+            <span class="opacity-80">Bądź na bieżąco:</span>
+            <div class="flex gap-4 items-center">
+                <a href="https://www.instagram.com/jaksiedogadac/" class="hover:text-pink-200 transition-colors">INSTAGRAM</a>
+                <a href="https://www.facebook.com/jaksiedogadacblog/" class="hover:text-pink-200 transition-colors">FACEBOOK</a>
+                <a href="https://www.linkedin.com/in/elzbietacwynarbudzinska/" class="hover:text-pink-200 transition-colors">LINKEDIN</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header class="bg-surface/80 backdrop-blur-md border-b border-outline/5 h-24 top-0 sticky z-50 transition-all duration-300">
+        <nav class="max-w-[1440px] mx-auto px-6 md:px-16 flex items-center h-full">
+            <div class="flex-grow text-xl md:text-2xl font-normal tracking-tighter text-primary font-headline">
+                <a href="index.html">Ela Cwynar-Budzińska</a>
+            </div>
+            
+            <div class="hidden lg:flex gap-8 items-center">
+                <a href="szkolenia.html" class="text-on-surface hover:text-primary transition-colors font-medium text-[10px] uppercase tracking-widest whitespace-nowrap">Szkolenia dla firm</a>
+                <a href="pary.html" class="text-on-surface hover:text-primary transition-colors font-medium text-[10px] uppercase tracking-widest whitespace-nowrap">Warsztaty dla par</a>
+                
+                <div class="group h-full flex items-center">
+                    <a href="kursy.html" class="text-on-surface hover:text-primary transition-colors font-medium text-[10px] uppercase tracking-widest whitespace-nowrap flex items-center gap-1 py-4">
+                        Kursy online
+                        <span class="material-symbols-outlined text-sm transition-transform group-hover:rotate-180">expand_more</span>
+                    </a>
+                    
+                    <!-- Artistic Mega Menu -->
+                    <div class="absolute top-full left-0 w-full bg-[#fdf9f2] border-t border-outline/5 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden">
+                        <!-- Decorative Art Elements -->
+                        <div class="absolute -right-20 -top-20 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+                        <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-[#b89762]/10 rounded-full blur-3xl"></div>
+                        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-[0.03] pointer-events-none">
+                            <svg viewBox="0 0 100 100" class="w-full h-full">
+                                <circle cx="20" cy="20" r="15" fill="#c2185b"/>
+                                <circle cx="80" cy="70" r="25" fill="#b89762"/>
+                                <path d="M 10 80 Q 30 60 50 80 T 90 80" stroke="#e67e22" fill="none" stroke-width="0.5"/>
+                            </svg>
+                        </div>
+                        <div class="max-w-[1440px] mx-auto px-16 py-12 text-on-surface relative z-10">
+                            <div class="text-center mb-10">
+                                <h3 class="font-headline text-3xl">Kursy online</h3>
+                                <div class="w-12 h-1 bg-[#b89762] mx-auto mt-2 rounded-full"></div>
+                            </div>
+                            <div class="flex justify-center gap-12 max-w-5xl mx-auto">
+                                <a href="https://www.kursokomunikacji.pl/" class="group/card block w-full max-w-[320px] transition-all duration-500">
+                                    <div class="aspect-[4/3] rounded-2xl overflow-hidden mb-6 shadow-md group-hover/card:shadow-2xl transition-all duration-500 relative">
+                                        <div class="absolute -bottom-4 -right-4 w-20 h-20 bg-[#b89762]/20 rounded-full blur-xl group-hover/card:bg-primary/20 transition-colors"></div>
+                                        <img src="images/kurs_sztuka.jpg" alt="Sztuka komunikacji" class="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-700">
+                                        <div class="absolute top-4 left-4">
+                                            <span class="bg-primary text-white text-[8px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full shadow-lg">Bestseller</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-primary text-white text-center py-6 px-6 rounded-none font-body text-2xl font-bold group-hover:bg-[#a3154d] transition-all shadow-md uppercase tracking-tight leading-tight">
+                                        Sztuka<br>komunikacji
+                                    </div>
+                                </a>
+                                <a href="kursy.html" class="group/card block w-full max-w-[320px] transition-all duration-500">
+                                    <div class="aspect-[4/3] rounded-2xl overflow-hidden mb-6 shadow-md group-hover/card:shadow-2xl transition-all duration-500 relative">
+                                        <div class="absolute -bottom-4 -right-4 w-20 h-20 bg-[#e67e22]/20 rounded-full blur-xl group-hover/card:bg-primary/20 transition-colors"></div>
+                                        <img src="images/kurs_konflikty.jpg" alt="Rozwiązywanie konfliktów" class="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-700">
+                                        <div class="absolute top-4 left-4">
+                                            <span class="bg-primary text-white text-[8px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full shadow-lg">Nowość</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-primary text-white text-center py-6 px-6 rounded-none font-body text-2xl font-bold group-hover:bg-[#a3154d] transition-all shadow-md uppercase tracking-tight leading-tight">
+                                        Rozwiązywanie<br>konfliktów
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="omnie.html" class="text-on-surface hover:text-primary transition-colors font-medium text-[10px] uppercase tracking-widest whitespace-nowrap">O mnie</a>
+                <a href="podcast.html" class="text-on-surface hover:text-primary transition-colors font-medium text-[10px] uppercase tracking-widest whitespace-nowrap">Podcast</a>
+                <a href="kontakt.html" class="text-on-surface hover:text-primary transition-colors font-medium text-[10px] uppercase tracking-widest whitespace-nowrap">Napisz do mnie</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="relative">
+        <!-- Background Art Elements (Visible Vesica & Blobs) -->
+        <div class="art-shape absolute top-32 right-[5%] w-64 h-64 opacity-[0.25] text-primary">
+             <!-- Prominent Vesica Piscis -->
+             <svg viewBox="0 0 100 100" class="w-full h-full fill-none stroke-current stroke-[2.5]">
+                <circle cx="35" cy="50" r="30" />
+                <circle cx="65" cy="50" r="30" />
+             </svg>
+        </div>
+        <div class="art-shape absolute top-[40%] -left-10 w-72 h-72 bg-slate-400/5 rounded-full blur-3xl"></div>
+
+        <!-- Hero Section -->
+        <section class="relative pt-0 pb-0 overflow-hidden reveal active">
+            <div class="w-full relative z-10">
+                <img src="images/hero_home.png" alt="Ela Cwynar-Budzińska" class="w-full h-auto object-cover max-h-[90vh]">
+            </div>
+        </section>
+
+        <!-- Header Text Section -->
+        <section class="py-20 bg-surface relative overflow-hidden reveal">
+            <!-- Repositioned Brush Stains -->
+            <div class="absolute top-10 right-0 w-64 h-24 bg-primary opacity-[0.08] rounded-sm transform rotate-12 translate-x-20"></div>
+            <div class="absolute bottom-10 left-0 w-80 h-32 bg-slate-400 opacity-[0.06] rounded-sm transform -rotate-6 -translate-x-20"></div>
+
+            <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+                <p class="uppercase tracking-[0.3em] font-bold text-primary mb-8 text-[10px]">Ekspert od relacji</p>
+                <h1 class="font-headline text-5xl md:text-6xl leading-tight mb-8 text-on-surface">
+                    Odzyskaj sprawczość w każdej rozmowie.
+                </h1>
+                <p class="text-on-surface-variant mb-10 max-w-2xl mx-auto leading-relaxed text-lg font-light">
+                    Nauczę Cię zarządzać napięciem, stawiać granice i budować porozumienie tam, gdzie do tej pory był tylko konflikt lub cisza.
+                </p>
+                <a href="#oferta" class="inline-block bg-primary text-white px-10 py-5 font-bold uppercase tracking-widest text-[10px] hover:brightness-110 transition-all shadow-xl">
+                    Sprawdź, jak mogę Ci pomóc
+                </a>
+            </div>
+        </section>
+
+        <!-- Introduction -->
+        <section class="py-16 bg-surface relative reveal overflow-hidden">
+            <!-- Second instance of the storytelling element -->
+            <div class="absolute top-10 left-0 w-[280px] md:w-[400px] h-[150px] opacity-[0.25] pointer-events-none z-0 transform -translate-x-20">
+                <div class="absolute inset-0 bg-slate-300" style="border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;"></div>
+                <div class="absolute top-1/4 left-1/3 flex gap-1.5">
+                    <div class="w-1 h-6 bg-on-surface rounded-full"></div>
+                    <div class="w-1 h-6 bg-on-surface rounded-full"></div>
+                </div>
+                <div class="absolute -right-6 top-1/2 -translate-y-1/2 w-20 h-20 bg-[#f48fb1] rounded-full blur-sm"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto px-6 text-justify text-on-surface leading-relaxed relative z-10">
+                <h2 class="font-headline text-4xl mb-8 text-on-surface text-center">Nikt nie uczył nas, jak się dogadywać.</h2>
+                <p class="mb-6 font-light">
+                    W szkole uczyliśmy się wzorów i dat, ale nikt nie pokazał nam, jak mówić o potrzebach, jak reagować, gdy coś nam się nie podoba i jak zarządzać emocjami.
+                </p>
+                <p class="mb-0 font-bold text-lg text-primary italic text-center">
+                    A wszystko, co w życiu dobre – świetny interes, serdeczna relacja – zaczyna się od rozmowy.
+                </p>
+            </div>
+        </section>
+
+        <!-- Experience Panel (Organic Shape & Compact Text) -->
+        <section class="py-12 relative reveal">
+            <!-- Organic Blobs around the section -->
+            <div class="absolute top-0 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-float"></div>
+            <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-slate-400/5 rounded-full blur-3xl animate-pulse"></div>
+
+            <div class="max-w-5xl mx-auto px-6 relative z-10">
+                <!-- Smoother Organic Shape using border-radius blob technique -->
+                <div class="bg-primary text-white p-12 lg:px-24 lg:py-16 text-center shadow-2xl relative overflow-hidden mx-auto" 
+                     style="border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; max-width: 900px;">
+                    
+                    <h3 class="font-headline text-3xl md:text-4xl mb-6 leading-tight">Dlaczego to, co działa w korporacji, uratuje Twój dom i odwrotnie?</h3>
+                    <p class="max-w-xl mx-auto text-pink-100 mb-8 font-light leading-snug text-base md:text-lg">
+                        Przez 17 lat szkoliłam liderów w największych firmach. Równolegle pomagałam parom wyjść z najtrudniejszych kryzysów. Mechanizmy są te same. Ty jesteś mostem między tymi światami.
+                    </p>
+                    
+                    <div class="flex flex-wrap justify-center gap-x-10 gap-y-6 mb-8">
+                        <div>
+                            <div class="text-5xl font-bold font-headline">17+</div>
+                            <div class="text-[9px] uppercase tracking-widest font-bold text-pink-300">Lat doświadczenia</div>
+                        </div>
+                        <div>
+                            <div class="text-5xl font-bold font-headline">15k</div>
+                            <div class="text-[9px] uppercase tracking-widest font-bold text-pink-300">Godzin pracy</div>
+                        </div>
+                        <div>
+                            <div class="text-5xl font-bold font-headline">5+</div>
+                            <div class="text-[9px] uppercase tracking-widest font-bold text-pink-300">Lat w gabinecie</div>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <a href="omnie.html" class="inline-block border border-white/30 text-white px-8 py-3 font-bold uppercase tracking-widest text-[9px] hover:bg-white hover:text-primary transition-all rounded-full">Poznaj moją historię</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Offer Section -->
+        <section id="oferta" class="py-32 bg-surface relative reveal">
+            <!-- Artistic Blob Background -->
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-[#b89762]/5 rounded-full blur-3xl"></div>
+            
+            <div class="max-w-[1440px] mx-auto px-6 lg:px-16 relative z-10">
+                <div class="grid md:grid-cols-3 gap-12">
+                    <!-- Card 1 -->
+                    <div class="group bg-white rounded-[3rem] overflow-hidden border border-outline/5 hover:-translate-y-3 transition-all duration-700 shadow-sm hover:shadow-2xl">
+                        <div class="aspect-[4/3] overflow-hidden relative">
+                            <img src="images/tower-of-babel.png" alt="Szkolenia" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                            <!-- Brush Accent -->
+                            <div class="absolute bottom-0 left-0 w-full h-1 bg-primary/20"></div>
+                        </div>
+                        <div class="p-12 text-center">
+                            <h3 class="font-headline text-3xl mb-4">Szkolenia dla firm</h3>
+                            <p class="text-on-surface-variant mb-10 leading-relaxed font-light">Szkolenia zamknięte dla firm i zespołów liderów.</p>
+                            <a href="szkolenia.html" class="text-primary font-bold uppercase tracking-widest text-[10px] group-hover:tracking-[0.2em] transition-all">Szczegóły</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 2 -->
+                    <div class="group bg-white rounded-[3rem] overflow-hidden border border-outline/5 hover:-translate-y-3 transition-all duration-700 shadow-sm hover:shadow-2xl">
+                        <div class="aspect-[4/3] overflow-hidden relative">
+                            <img src="images/warsztaty-dla-par.png" alt="Pary" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                            <div class="absolute bottom-0 left-0 w-full h-1 bg-slate-300"></div>
+                        </div>
+                        <div class="p-12 text-center">
+                            <h3 class="font-headline text-3xl mb-4">Warsztaty dla par</h3>
+                            <p class="text-on-surface-variant mb-10 leading-relaxed font-light">Powrót do bliskości poprzez bezpieczny dialog.</p>
+                            <a href="pary.html" class="text-primary font-bold uppercase tracking-widest text-[10px] group-hover:tracking-[0.2em] transition-all">Szczegóły</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="group bg-white rounded-[3rem] overflow-hidden border border-outline/5 hover:-translate-y-3 transition-all duration-700 shadow-sm hover:shadow-2xl">
+                        <div class="aspect-[4/3] overflow-hidden relative">
+                            <img src="images/kursy-online.png" alt="Kursy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                            <div class="absolute bottom-0 left-0 w-full h-1 bg-primary/20"></div>
+                        </div>
+                        <div class="p-12 text-center">
+                            <h3 class="font-headline text-3xl mb-4">Kursy online</h3>
+                            <p class="text-on-surface-variant mb-10 leading-relaxed font-light">Budowanie wewnętrznej siły i odporności.</p>
+                            <a href="kursy.html" class="text-primary font-bold uppercase tracking-widest text-[10px] group-hover:tracking-[0.2em] transition-all">Szczegóły</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About / Bio Section (O komunikacji po ludzku) - New Image & Layout -->
+        <section class="py-24 relative overflow-hidden reveal">
+            <!-- Full Background Image Composition -->
+            <div class="absolute inset-0 z-0">
+                <img src="images/bio-art.png" alt="Bio Background" class="w-full h-full object-cover">
+            </div>
+            
+            <div class="max-w-[1440px] mx-auto px-16 relative z-10">
+                <div class="flex flex-col lg:flex-row items-center">
+                    <!-- Text on the Left, overlapping the artistic part of the background -->
+                    <div class="lg:w-1/2 lg:pr-12">
+                        <p class="uppercase tracking-[0.3em] font-bold text-primary mb-6 text-[10px]">O komunikacji po ludzku</p>
+                        <h2 class="font-headline text-4xl md:text-5xl leading-tight mb-8">Nazywam się Ela Cwynar-Budzińska</h2>
+                        <div class="space-y-6 text-on-surface-variant text-lg leading-relaxed font-light">
+                            <p>
+                                Przez lata obserwowałam, jak genialne strategie biznesowe upadają przez brak umiejętności rozmowy. I jak wspaniali ludzie oddalają się od siebie, bo nie potrafią nazwać tego, co czują.
+                            </p>
+                            <p>
+                                Moje podejście łączy twardą wiedzę o mechanizmach psychologicznych z głęboką empatią. Nie daję gotowych recept, ale narzędzia, które pozwalają budować mosty tam, gdzie inni widzą przepaść.
+                            </p>
+                            <p class="font-bold text-primary italic">
+                                Stworzyłam miejsce, w którym o dobrej komunikacji może się uczyć każdy.
+                            </p>
+                        </div>
+                        <div class="mt-12">
+                            <a href="omnie.html" class="inline-block bg-primary text-white px-10 py-5 font-bold uppercase tracking-widest text-[10px] hover:brightness-110 transition-all shadow-xl">
+                                Poznaj moją historię
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Spacer for the photo part of the background image -->
+                    <div class="lg:w-1/2 h-[400px] md:h-[600px]"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Artistic -->
+        <section class="bg-primary py-24 reveal text-white text-center relative overflow-hidden">
+             <!-- Pink & Gray Artistic Accents in Background -->
+            <div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-[0.05] rounded-full -translate-y-1/2 translate-x-1/2"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-32 bg-slate-400 opacity-[0.1] transform rotate-12 -translate-x-1/4"></div>
+
+            <!-- New Storytelling Element from Image (Increased visibility & responsive) -->
+            <div class="absolute top-1/2 right-0 -translate-y-1/2 w-[300px] md:w-[450px] h-[180px] opacity-[0.4] pointer-events-none z-0">
+                <!-- Grey Blob -->
+                <div class="absolute inset-0 bg-slate-300" style="border-radius: 40% 60% 70% 30% / 40% 50% 60% 40%;"></div>
+                <!-- Symbolic Figures -->
+                <div class="absolute top-1/3 right-1/4 flex gap-2">
+                    <div class="w-1.5 h-8 bg-on-surface rounded-full"></div>
+                    <div class="w-1.5 h-8 bg-on-surface rounded-full"></div>
+                </div>
+                <!-- Pink Blob -->
+                <div class="absolute -left-8 top-1/2 -translate-y-1/2 w-24 md:w-32 h-24 md:h-32 bg-[#f48fb1] rounded-full shadow-lg"></div>
+            </div>
+
+            <div class="max-w-3xl mx-auto px-6 relative z-10">
+                <h2 class="font-headline text-5xl mb-8 leading-tight">Buduj fajniejsze relacje</h2>
+                <p class="mb-12 text-pink-100 opacity-90 text-lg font-light">
+                    Zapisz się na newsletter, by raz w miesiącu otrzymywać dawkę inspiracji o komunikacji i relacjach.
+                </p>
+                <div class="ml-embedded" data-form="E23vqZ"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface py-20 border-t border-outline/5 relative z-10">
+        <div class="max-w-[1440px] mx-auto px-16">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-16">
+                <div class="lg:col-span-6">
+                    <h2 class="font-headline text-3xl text-on-surface mb-8">Ela Cwynar-Budzińska</h2>
+                    <p class="text-on-surface/50 leading-relaxed max-w-md">Pomagam ludziom odzyskać głos w relacjach i budować asertywność.</p>
+                </div>
+                <div class="lg:col-span-6 grid grid-cols-2 gap-12">
+                    <div>
+                        <p class="text-[10px] font-bold text-primary uppercase tracking-widest mb-10">Menu</p>
+                        <ul class="space-y-4 text-sm font-medium">
+                            <li><a href="szkolenia.html" class="hover:text-primary">Szkolenia</a></li>
+                            <li><a href="pary.html" class="hover:text-primary">Pary</a></li>
+                            <li><a href="kursy.html" class="hover:text-primary">Kursy</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-bold text-primary uppercase tracking-widest mb-10">Kontakt</p>
+                        <p class="text-sm">ela@bcb-szkolenia.pl</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-12 border-t border-outline/5 text-center text-[10px] font-bold uppercase tracking-widest text-on-surface/30">
+                © 2026 Ela Cwynar-Budzińska
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, observerOptions);
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
