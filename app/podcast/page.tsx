@@ -1,12 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Link from "next/link";
 import { NewsletterForm } from "@/components/NewsletterForm";
 
 export default function Podcast() {
-  const [isNewsletterSubmitted, setIsNewsletterSubmitted] = useState(false);
-
   useEffect(() => {
     // Reveal Animations
     const observerOptions = { threshold: 0.1 };
@@ -183,39 +181,8 @@ export default function Podcast() {
                     <p className="text-on-surface-variant text-lg leading-relaxed mb-12 italic">
                         Zapisz się na newsletter, by raz w miesiącu otrzymywać dawkę inspiracji o komunikacji i relacjach.
                     </p>
-                    {isNewsletterSubmitted ? (
-                        <div className="py-8 text-center bg-white/90 backdrop-blur-sm rounded-2xl p-8 border border-outline/10 shadow-xl max-w-md">
-                            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                                <span className="material-symbols-outlined text-primary text-3xl">check_circle</span>
-                            </div>
-                            <h4 className="font-headline text-3xl mb-4 text-primary">Dziękuję!</h4>
-                            <p className="text-on-surface-variant text-lg leading-relaxed">Pomyślnie zapisano na newsletter. Bądźmy w kontakcie!</p>
-                        </div>
-                    ) : (
-                        <form onSubmit={async (e) => {
-                            e.preventDefault();
-                            const form = e.currentTarget;
-                            try {
-                                await fetch("https://formspree.io/f/xlgzvvea", { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
-                                setIsNewsletterSubmitted(true);
-                            } catch (err) {
-                                alert("Wystąpił błąd.");
-                            }
-                        }} className="space-y-4 bg-white/90 backdrop-blur-sm p-8 rounded-2xl border border-outline/10 shadow-xl max-w-md">
-                            <div className="text-left">
-                                <label htmlFor="newsletter-name" className="block text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-2">Imię</label>
-                                <input type="text" id="newsletter-name" name="name" required placeholder="Wpisz swoje imię" className="w-full px-6 py-4 bg-surface-container-low border border-outline/20 rounded-lg outline-none focus:border-primary transition-colors text-base" />
-                            </div>
-                            <div className="text-left">
-                                <label htmlFor="newsletter-email" className="block text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-2">Email</label>
-                                <input type="email" id="newsletter-email" name="email" required placeholder="Twoja skrzynka pocztowa" className="w-full px-6 py-4 bg-surface-container-low border border-outline/20 rounded-lg outline-none focus:border-primary transition-colors text-base" />
-                            </div>
-                            <div className="pt-2">
-                                <button type="submit" className="w-full bg-primary text-white py-5 font-bold uppercase tracking-[0.25em] text-xs rounded-lg shadow-xl hover:bg-primary-container transition-all active:scale-[0.98]">ZAPISZ SIĘ</button>
-                            </div>
-                        </form>
-                    )}
-                    <p className="mt-6 text-[8px] uppercase tracking-widest opacity-60 text-on-surface/70">Zapisując się na newsletter zgadzasz się otrzymywać informacje marketingowe.</p>
+                    <NewsletterForm formId="E23vqZ" />
+                    <p className="mt-4 text-[8px] uppercase tracking-widest opacity-60 text-on-surface/70">Zapisując się na newsletter zgadzasz się otrzymywać informacje marketingowe.</p>
                 </div>
                 <div className="relative">
                     <div className="rounded-[4rem_12rem_6rem_16rem] overflow-hidden shadow-2xl relative z-10 aspect-square">
