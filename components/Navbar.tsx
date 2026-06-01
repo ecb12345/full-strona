@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 export function Navbar() {
   const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
   return (
@@ -38,6 +39,15 @@ export function Navbar() {
               <div className="flex-grow text-xl md:text-2xl font-normal tracking-tighter text-primary-container font-headline">
                   <Link href="/">Ela Cwynar-Budzińska</Link>
               </div>
+              
+              <button 
+                  className="lg:hidden text-on-surface hover:text-primary transition-colors flex items-center justify-center p-2 -mr-2"
+                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              >
+                  <span className="material-symbols-outlined text-3xl">
+                      {isMobileMenuOpen ? 'close' : 'menu'}
+                  </span>
+              </button>
               
               <div className="hidden lg:flex gap-8 items-center">
                   <Link href="/szkolenia" className={pathname === '/szkolenia' ? "text-primary border-b-2 border-primary pb-1 font-medium text-xs uppercase tracking-wider whitespace-nowrap" : "text-on-surface hover:text-primary transition-colors font-medium text-xs uppercase tracking-wider whitespace-nowrap"}>Szkolenia dla firm</Link>
@@ -105,6 +115,24 @@ export function Navbar() {
                   <Link href="/kontakt" className={pathname === '/kontakt' ? "text-primary border-b-2 border-primary pb-1 font-medium text-xs uppercase tracking-wider whitespace-nowrap" : "text-on-surface hover:text-primary transition-colors font-medium text-xs uppercase tracking-wider whitespace-nowrap"}>Kontakt</Link>
               </div>
           </nav>
+
+          {/* Mobile Menu */}
+          <div className={`lg:hidden absolute top-full left-0 w-full bg-zinc-100 border-b border-outline/10 shadow-lg overflow-y-auto transition-all duration-300 ${isMobileMenuOpen ? 'max-h-[80vh] py-6 opacity-100' : 'max-h-0 py-0 opacity-0 border-none'}`}>
+              <div className="flex flex-col px-6 gap-6">
+                  <Link href="/szkolenia" onClick={() => setIsMobileMenuOpen(false)} className={pathname === '/szkolenia' ? "text-primary font-medium text-sm uppercase tracking-wider" : "text-on-surface hover:text-primary font-medium text-sm uppercase tracking-wider transition-colors"}>Szkolenia dla firm</Link>
+                  <Link href="/pary" onClick={() => setIsMobileMenuOpen(false)} className={pathname === '/pary' ? "text-primary font-medium text-sm uppercase tracking-wider" : "text-on-surface hover:text-primary font-medium text-sm uppercase tracking-wider transition-colors"}>Warsztaty dla par</Link>
+                  <div className="py-2 border-y border-outline/10">
+                      <span className="text-on-surface-variant font-medium text-xs uppercase tracking-[0.2em] mb-4 block">Kursy online</span>
+                      <div className="flex flex-col gap-4 pl-4 border-l-2 border-primary/20">
+                          <a href="https://www.kursokomunikacji.pl/" className="text-on-surface hover:text-primary text-sm font-medium uppercase tracking-wider transition-colors">Sztuka komunikacji <span className="text-primary text-[10px] ml-1 tracking-[0.2em]">(Bestseller)</span></a>
+                          <button onClick={() => { setIsMobileMenuOpen(false); setIsWaitlistOpen(true); setIsSubmitted(false); }} className="text-on-surface hover:text-primary text-sm font-medium uppercase tracking-wider text-left transition-colors">Rozwiązywanie konfliktów <span className="text-on-surface-variant text-[10px] ml-1 tracking-[0.2em]">(Wkrótce)</span></button>
+                      </div>
+                  </div>
+                  <Link href="/omnie" onClick={() => setIsMobileMenuOpen(false)} className={pathname === '/omnie' ? "text-primary font-medium text-sm uppercase tracking-wider" : "text-on-surface hover:text-primary font-medium text-sm uppercase tracking-wider transition-colors"}>O mnie</Link>
+                  <Link href="/podcast" onClick={() => setIsMobileMenuOpen(false)} className={pathname === '/podcast' ? "text-primary font-medium text-sm uppercase tracking-wider" : "text-on-surface hover:text-primary font-medium text-sm uppercase tracking-wider transition-colors"}>Podcast</Link>
+                  <Link href="/kontakt" onClick={() => setIsMobileMenuOpen(false)} className={pathname === '/kontakt' ? "text-primary font-medium text-sm uppercase tracking-wider" : "text-on-surface hover:text-primary font-medium text-sm uppercase tracking-wider transition-colors"}>Kontakt</Link>
+              </div>
+          </div>
       </header>
 
       {/* Waitlist Modal */}
