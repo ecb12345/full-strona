@@ -207,7 +207,7 @@ export default function Home() {
 
         {/* Combined Artistic Bio Section */}
         <section id="o-mnie" className="relative w-full overflow-hidden reveal">
-            <img src="/images/tło 4.png" alt="Ela Cwynar-Budzińska Bio" className="w-full h-auto object-cover min-h-[600px] lg:min-h-0" />
+            <img src="/images/tło 4.png" alt="Ela Cwynar-Budzińska Bio" className="w-full h-auto object-cover min-h-[600px] lg:min-h-0 object-[80%_center] lg:object-center" />
             
             <div className="absolute inset-0 flex items-center z-10">
                 <div className="max-w-[1440px] mx-auto w-full px-6 md:px-16">
