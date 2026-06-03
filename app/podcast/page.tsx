@@ -69,12 +69,12 @@ export default function Podcast() {
                     {/* Blog Item 2 */}
                     <div className="group cursor-pointer">
                         <div className="aspect-[4/3] overflow-hidden rounded-3xl mb-8 relative">
-                            <img src="/images/feedback_lifestyle.png" alt="Informacja zwrotna" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                            <img src="/images/feedback_lifestyle.png" alt="Mapa miłości" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                             <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest">Artykuł</div>
                         </div>
-                        <h3 className="font-headline text-2xl mb-4 group-hover:text-primary transition-colors">Informacja zwrotna</h3>
+                        <h3 className="font-headline text-2xl mb-4 group-hover:text-primary transition-colors">Mapa miłości</h3>
                         <p className="text-on-surface-variant text-sm leading-relaxed mb-8">Najgorsze nie zauważać</p>
-                        <a href="https://jaksiedogadac.pl/informacja-zwrotna/" className="inline-block bg-primary text-white px-8 py-3 rounded-full font-bold uppercase tracking-widest text-[10px] hover:brightness-110 transition-all shadow-md">
+                        <a href="https://jaksiedogadac.pl/mapa-milosci/" className="inline-block bg-primary text-white px-8 py-3 rounded-full font-bold uppercase tracking-widest text-[10px] hover:brightness-110 transition-all shadow-md">
                             Czytaj
                         </a>
                     </div>
