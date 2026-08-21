@@ -52,64 +52,7 @@ export function Navbar() {
               <div className="hidden lg:flex gap-8 items-center">
                   <Link href="/szkolenia" className={pathname === '/szkolenia' ? "text-primary border-b-2 border-primary pb-1 font-medium text-xs uppercase tracking-wider whitespace-nowrap" : "text-on-surface hover:text-primary transition-colors font-medium text-xs uppercase tracking-wider whitespace-nowrap"}>Szkolenia dla firm</Link>
                   <Link href="/pary" className={pathname === '/pary' ? "text-primary border-b-2 border-primary pb-1 font-medium text-xs uppercase tracking-wider whitespace-nowrap" : "text-on-surface hover:text-primary transition-colors font-medium text-xs uppercase tracking-wider whitespace-nowrap"}>Warsztaty dla par</Link>
-                  {/* Kursy Online with Mega Menu */}
-                  <div className="group h-full flex items-center">
-                      <Link href="/kursy" className={pathname === '/kursy' ? "text-primary border-b-2 border-primary pb-1 font-medium text-xs uppercase tracking-wider whitespace-nowrap flex items-center gap-1 py-4" : "text-on-surface hover:text-primary transition-colors font-medium text-xs uppercase tracking-wider whitespace-nowrap flex items-center gap-1 py-4"}>
-                          Kursy online
-                          <span className="material-symbols-outlined text-sm transition-transform group-hover:rotate-180">expand_more</span>
-                      </Link>
-                      
-                      {/* Mega Menu Dropdown */}
-                      <div className="absolute top-full left-0 w-full bg-[#fdf9f2] border-t border-outline/5 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden">
-                          {/* Decorative Art Elements */}
-                          <div className="absolute -right-20 -top-20 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
-                          <div className="absolute -left-20 -bottom-20 w-80 h-80 bg-[#b89762]/10 rounded-full blur-3xl"></div>
-                          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-[0.03] pointer-events-none">
-                              <svg viewBox="0 0 100 100" className="w-full h-full">
-                                  <circle cx="20" cy="20" r="15" fill="#c2185b"/>
-                                  <circle cx="80" cy="70" r="25" fill="#b89762"/>
-                                  <path d="M 10 80 Q 30 60 50 80 T 90 80" stroke="#e67e22" fill="none" strokeWidth="0.5"/>
-                              </svg>
-                          </div>
-                          <div className="max-w-[1440px] mx-auto px-16 py-12 text-on-surface relative z-10">
-                          
-                              <div className="text-center mb-10">
-                                  <h3 className="font-headline text-3xl">Kursy online</h3>
-                                  <div className="w-12 h-1 bg-[#b89762] mx-auto mt-2 rounded-full"></div>
-                              </div>
-                              
-                              <div className="flex justify-center gap-12 max-w-5xl mx-auto">
-                                  {/* Card 1 */}
-                                  <a href="https://www.kursokomunikacji.pl/" className="group/card block w-full max-w-[320px] transition-all duration-500">
-                                      <div className="aspect-[4/3] rounded-2xl overflow-hidden mb-6 shadow-md group-hover/card:shadow-2xl transition-all duration-500 relative">
-                                          <img src="/images/kurs_sztuka.jpg" alt="Sztuka komunikacji" className="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-700" />
-                                          <div className="absolute top-4 left-4">
-                                              <span className="bg-primary text-white text-[8px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full shadow-lg">Bestseller</span>
-                                          </div>
-                                      </div>
-                                      <div className="bg-primary text-white text-center py-3 px-8 rounded-full font-body text-[11px] font-bold group-hover:bg-[#a3154d] transition-all shadow-md uppercase tracking-[0.25em] leading-tight mx-4 -mt-4 relative z-10">
-                                          Sztuka<br/>komunikacji
-                                      </div>
-                                  </a>
-                                                                    {/* Card 2 (Waitlist) */}
-                                   <button 
-                                      onClick={() => { setIsWaitlistOpen(true); setIsSubmitted(false); }}
-                                      className="group/card block w-full max-w-[320px] transition-all duration-500 text-left"
-                                   >
-                                      <div className="aspect-[4/3] rounded-2xl overflow-hidden mb-6 shadow-md group-hover/card:shadow-2xl transition-all duration-500 relative">
-                                          <img src="/images/kurs_konflikty.jpg" alt="Rozwiązywanie konfliktów" className="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-700" />
-                                          <div className="absolute top-4 left-4">
-                                              <span className="bg-primary text-white text-[8px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full shadow-lg">Wkrótce</span>
-                                          </div>
-                                      </div>
-                                      <div className="bg-primary text-white text-center py-3 px-8 rounded-full font-body text-[11px] font-bold group-hover:bg-[#a3154d] transition-all shadow-md uppercase tracking-[0.25em] leading-tight mx-4 -mt-4 relative z-10">
-                                          Rozwiązywanie<br/>konfliktów
-                                      </div>
-                                  </button>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
+                  <Link href="/kursy" className={pathname === '/kursy' ? "text-primary border-b-2 border-primary pb-1 font-medium text-xs uppercase tracking-wider whitespace-nowrap" : "text-on-surface hover:text-primary transition-colors font-medium text-xs uppercase tracking-wider whitespace-nowrap"}>Kursy online</Link>
                   <Link href="/omnie" className={pathname === '/omnie' ? "text-primary border-b-2 border-primary pb-1 font-medium text-xs uppercase tracking-wider whitespace-nowrap" : "text-on-surface hover:text-primary transition-colors font-medium text-xs uppercase tracking-wider whitespace-nowrap"}>O mnie</Link>
                   <Link href="/podcast" className={pathname === '/podcast' ? "text-primary border-b-2 border-primary pb-1 font-medium text-xs uppercase tracking-wider whitespace-nowrap" : "text-on-surface hover:text-primary transition-colors font-medium text-xs uppercase tracking-wider whitespace-nowrap"}>Podcast</Link>
                   <Link href="/kontakt" className={pathname === '/kontakt' ? "text-primary border-b-2 border-primary pb-1 font-medium text-xs uppercase tracking-wider whitespace-nowrap" : "text-on-surface hover:text-primary transition-colors font-medium text-xs uppercase tracking-wider whitespace-nowrap"}>Kontakt</Link>

@@ -119,29 +119,14 @@ export default function Kursy() {
 
         {/* Course Cards (Esther Perel Inspired) */}
         <section className="pb-32 bg-surface reveal active">
-            <div className="max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-16">
+            <div className="max-w-[540px] mx-auto px-6">
                 
-                {/* Card 1 */}
-                <div className="perel-card shadow-xl border border-outline/5">
-                    <div className="organic-top bg-cover bg-center" style={{ backgroundImage: "url('/images/kurs_sztuka.jpg')" }}>
-                    </div>
-                    <div className="p-10 pt-16 text-center">
-                        <h2 className="font-headline text-3xl mb-6">Sztuka komunikacji</h2>
-                        <p className="text-on-surface-variant mb-10 text-sm leading-relaxed">
-                            Opanuj fundamenty porozumienia. Dowiedz się, jak wyrażać potrzeby i słuchać z empatią, by budować trwałe relacje w pracy i w domu.
-                        </p>
-                        <a href="https://www.kursokomunikacji.pl/" className="inline-block bg-primary text-white px-8 py-4 rounded-full font-bold uppercase tracking-[0.2em] text-[10px] hover:brightness-110 transition-all hover:shadow-xl transform hover:-translate-y-1">
-                            SPRAWDZAM
-                        </a>
-                    </div>
-                </div>
-
-                {/* Card 2 */}
+                {/* Course Card: Restart relacji */}
                 <div className="perel-card shadow-xl border border-outline/5">
                     <div className="organic-top bg-cover bg-center" style={{ backgroundImage: "url('/images/kurs_konflikty.jpg')" }}>
                     </div>
                     <div className="p-10 pt-16 text-center">
-                        <h2 className="font-headline text-3xl mb-6">Rozwiązywanie konfliktów</h2>
+                        <h2 className="font-headline text-3xl mb-6">Restart relacji</h2>
                         <p className="text-on-surface-variant mb-10 text-sm leading-relaxed">
                             Zmień napięcie w porozumienie. Poznaj sprawdzone techniki mediacji i radzenia sobie w trudnych sytuacjach interpersonalnych.
                         </p>
