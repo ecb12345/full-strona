@@ -242,7 +242,7 @@ export default function Home() {
             Zapisz się na newsletter, by raz w miesiącu otrzymywać dawkę inspiracji o komunikacji i relacjach.
           </p>
           <NewsletterForm formId="D6dfkq" />
-          <p className="mt-8 text-[8px] uppercase tracking-widest opacity-60 text-white/70">
+          <p className="mt-8 text-pink-100 opacity-90 text-sm md:text-base uppercase tracking-wider">
             Zapisując się na newsletter zgadzasz się otrzymywać informacje marketingowe.
           </p>
         </div>

@@ -38,10 +38,10 @@ export function NewsletterForm({ formId = "D6dfkq" }: { formId?: string }) {
 
   if (isSubmitted) {
     return (
-      <div className="py-8 text-center animate-fade-in">
-        <p className="font-headline text-2xl md:text-3xl text-white font-bold tracking-wide">
-          Dzięki! Jesteśmy w kontakcie :)
-        </p>
+      <div className="py-4 text-center animate-fade-in">
+        <h2 className="font-headline text-4xl text-white">
+          Super, jesteśmy w kontakcie :)
+        </h2>
       </div>
     );
   }
