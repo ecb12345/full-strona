@@ -98,15 +98,6 @@ export function NewsletterForm({ formId = "D6dfkq" }: { formId?: string }) {
         >
           <div className="flex-grow w-full">
             <input 
-              type="text" 
-              name="name" 
-              required 
-              placeholder="Imię" 
-              className="w-full h-[54px] px-8 bg-white text-[#1c1c18] rounded-full text-sm outline-none transition-all focus:ring-4 focus:ring-white/20 placeholder:text-[#8d6f76] placeholder:uppercase placeholder:tracking-[0.15em] placeholder:text-[10px] placeholder:font-bold shadow-md" 
-            />
-          </div>
-          <div className="flex-grow w-full">
-            <input 
               type="email" 
               name="email" 
               required 
