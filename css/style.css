@@ -114,11 +114,12 @@ body.menu-open {
 }
 /* Hide redundant MailerLite internal elements */
 .ml-form-embedHeader, 
-.ml-form-embedContent,
-.ml-form-successHeader,
-.ml-form-successContent,
+.ml-form-embedTitle,
 .ml-form-embedFooter {
     display: none !important;
+}
+.ml-form-embedContent {
+    display: block !important;
 }
 /* Horizontal Form Layout */
 .ml-block-form {
