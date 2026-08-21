@@ -68,12 +68,12 @@ export function NewsletterForm({ formId = "D6dfkq" }: { formId?: string }) {
   }
 
   return (
-    <div className="w-full max-w-[520px] mx-auto">
+    <div className="w-full max-w-[620px] mx-auto">
       <div className="ml-embedded hidden" data-form={formId}></div>
 
       <form 
         onSubmit={handleSubmit}
-        className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full"
+        className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full"
       >
         <div className="flex-grow w-full">
           <input 
@@ -81,20 +81,17 @@ export function NewsletterForm({ formId = "D6dfkq" }: { formId?: string }) {
             name="email" 
             required 
             placeholder="EMAIL" 
-            className="w-full h-[44px] px-6 bg-white text-[#1c1c18] rounded-full text-xs font-medium outline-none transition-all focus:ring-4 focus:ring-white/20 placeholder:text-[#8d6f76] placeholder:uppercase placeholder:tracking-[0.12em] placeholder:text-[10px] placeholder:font-bold shadow-md" 
+            className="w-full h-[50px] px-8 bg-white text-[#1c1c18] rounded-full text-xs font-semibold outline-none transition-all focus:ring-4 focus:ring-white/20 placeholder:text-[#8d6f76] placeholder:uppercase placeholder:tracking-[0.15em] placeholder:text-[10px] placeholder:font-bold shadow-md" 
           />
         </div>
         <button 
           type="submit" 
           disabled={loading}
-          className="w-full sm:w-auto min-w-[135px] h-[44px] bg-white text-[#9a004a] rounded-full px-6 font-extrabold uppercase tracking-[0.15em] text-[10px] hover:-translate-y-0.5 hover:shadow-xl hover:bg-white transition-all duration-300 flex items-center justify-center whitespace-nowrap disabled:opacity-50 cursor-pointer shadow-md"
+          className="w-full sm:w-auto min-w-[160px] h-[50px] bg-white text-[#9a004a] rounded-full px-8 font-extrabold uppercase tracking-[0.18em] text-[11px] hover:-translate-y-0.5 hover:shadow-xl hover:bg-white transition-all duration-300 flex items-center justify-center whitespace-nowrap disabled:opacity-50 cursor-pointer shadow-md"
         >
           {loading ? "ZAPISYWANIE..." : "ZAPISZ SIĘ"}
         </button>
       </form>
-      <p className="mt-3 text-[10px] text-white/85 text-center leading-normal">
-        Zapisując się do newslettera zgadzasz się na otrzymywanie wiadomości e-mail dotyczących komunikacji, relacji i psychologii. W każdej chwili możesz zrezygnować.
-      </p>
     </div>
   );
 }

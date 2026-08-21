@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
+import { NewsletterForm } from "@/components/NewsletterForm";
 
 
 export default function Podcast() {
@@ -171,8 +172,19 @@ export default function Podcast() {
                 </div>
             </section>
 
+        {/* Newsletter Section */}
+        <section className="bg-primary py-16 text-white text-center relative z-10">
+          <div className="max-w-3xl mx-auto px-6">
+            <h2 className="font-headline text-4xl mb-6">Buduj fajniejsze relacje</h2>
+            <p className="mb-10 text-pink-100 opacity-90 text-sm md:text-base">
+              Zapisz się na newsletter, by raz w miesiącu otrzymywać dawkę inspiracji o komunikacji i relacjach.
+            </p>
+            <NewsletterForm formId="D6dfkq" />
+            <p className="mt-8 text-[8px] uppercase tracking-widest opacity-60 text-white/70">
+              Zapisując się na newsletter zgadzasz się otrzymywać informacje marketingowe.
+            </p>
+          </div>
         </section>
-
 
       </main>
     </>
