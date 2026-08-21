@@ -102,7 +102,7 @@ export function NewsletterForm({ formId = "D6dfkq" }: { formId?: string }) {
               name="name" 
               required 
               placeholder="Imię" 
-              className="w-full h-[56px] px-8 bg-white/15 border border-white/30 rounded-xl text-white text-sm outline-none transition-all focus:bg-white/25 focus:border-white focus:ring-4 focus:ring-white/10 placeholder:text-white/70 placeholder:uppercase placeholder:tracking-[0.15em] placeholder:text-[10px] placeholder:font-bold" 
+              className="w-full h-[54px] px-8 bg-white text-[#1c1c18] rounded-full text-sm outline-none transition-all focus:ring-4 focus:ring-white/20 placeholder:text-[#8d6f76] placeholder:uppercase placeholder:tracking-[0.15em] placeholder:text-[10px] placeholder:font-bold shadow-md" 
             />
           </div>
           <div className="flex-grow w-full">
@@ -111,13 +111,13 @@ export function NewsletterForm({ formId = "D6dfkq" }: { formId?: string }) {
               name="email" 
               required 
               placeholder="Email" 
-              className="w-full h-[56px] px-8 bg-white/15 border border-white/30 rounded-xl text-white text-sm outline-none transition-all focus:bg-white/25 focus:border-white focus:ring-4 focus:ring-white/10 placeholder:text-white/70 placeholder:uppercase placeholder:tracking-[0.15em] placeholder:text-[10px] placeholder:font-bold" 
+              className="w-full h-[54px] px-8 bg-white text-[#1c1c18] rounded-full text-sm outline-none transition-all focus:ring-4 focus:ring-white/20 placeholder:text-[#8d6f76] placeholder:uppercase placeholder:tracking-[0.15em] placeholder:text-[10px] placeholder:font-bold shadow-md" 
             />
           </div>
           <button 
             type="submit" 
             disabled={loading}
-            className="w-full sm:w-auto min-w-[180px] h-[56px] bg-white text-[#9a004a] rounded-xl px-8 font-extrabold uppercase tracking-[0.15em] text-[11px] hover:-translate-y-1 hover:shadow-2xl hover:bg-white/95 transition-all duration-300 flex items-center justify-center whitespace-nowrap disabled:opacity-50 cursor-pointer"
+            className="w-full sm:w-auto min-w-[190px] h-[54px] bg-white text-[#9a004a] rounded-full px-10 font-extrabold uppercase tracking-[0.2em] text-[11px] hover:-translate-y-1 hover:shadow-2xl hover:bg-white transition-all duration-300 flex items-center justify-center whitespace-nowrap disabled:opacity-50 cursor-pointer shadow-lg"
           >
             {loading ? "ZAPISYWANIE..." : "ZAPISZ SIĘ"}
           </button>
