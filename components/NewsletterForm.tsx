@@ -1,28 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export function NewsletterForm({ formId = "D6dfkq" }: { formId?: string }) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      (window as any).ml = (window as any).ml || function () {
-        ((window as any).ml.q = (window as any).ml.q || []).push(arguments);
-      };
-      (window as any).ml('account', '2343740');
-
-      let script = document.getElementById("mailerlite-universal-js") as HTMLScriptElement;
-      if (!script) {
-        script = document.createElement("script");
-        script.id = "mailerlite-universal-js";
-        script.async = true;
-        script.src = "https://assets.mailerlite.com/js/universal.js";
-        document.head.appendChild(script);
-      }
-    }
-  }, [formId]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -37,7 +19,7 @@ export function NewsletterForm({ formId = "D6dfkq" }: { formId?: string }) {
           (window as any).ml('subscribe', { email });
         } catch (err) {}
       }
-      
+
       await fetch(`https://assets.mailerlite.com/json/2343740/forms/${formId}/subscribe`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -46,31 +28,26 @@ export function NewsletterForm({ formId = "D6dfkq" }: { formId?: string }) {
         }),
         mode: "no-cors"
       }).catch(() => {});
-
-      setIsSubmitted(true);
     } catch (err) {
-      setIsSubmitted(true);
+      // Ignore
     } finally {
       setLoading(false);
+      setIsSubmitted(true);
     }
   };
 
   if (isSubmitted) {
     return (
-      <div className="py-6 text-center animate-fade-in">
-        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3 backdrop-blur-md">
-          <span className="material-symbols-outlined text-white text-2xl">check_circle</span>
-        </div>
-        <h4 className="font-headline text-2xl mb-1 text-white font-bold">Dziękuję!</h4>
-        <p className="text-white/90 text-sm font-medium">Pomyślnie zapisano na newsletter.</p>
+      <div className="py-8 text-center animate-fade-in">
+        <p className="font-headline text-2xl md:text-3xl text-white font-bold tracking-wide">
+          Dzięki! Jesteśmy w kontakcie :)
+        </p>
       </div>
     );
   }
 
   return (
     <div className="w-full max-w-[620px] mx-auto">
-      <div className="ml-embedded hidden" data-form={formId}></div>
-
       <form 
         onSubmit={handleSubmit}
         className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full"
