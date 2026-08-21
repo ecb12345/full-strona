@@ -171,6 +171,7 @@ export default function Podcast() {
                     </div>
                 </div>
             </section>
+        </section>
 
         {/* Newsletter Section */}
         <section className="bg-primary py-16 text-white text-center relative z-10">
