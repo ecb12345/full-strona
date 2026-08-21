@@ -173,25 +173,7 @@ export default function Podcast() {
 
         </section>
 
-        {/* Newsletter Section */}
-        <section className="py-16 bg-surface reveal">
-            <div className="max-w-[1440px] mx-auto px-6 md:px-16 grid lg:grid-cols-2 gap-24 items-center">
-                <div className="max-w-xl">
-                    <h2 className="font-headline text-4xl md:text-5xl mb-8 leading-tight">Zostańmy w kontakcie</h2>
-                    <p className="text-on-surface-variant text-lg leading-relaxed mb-12 italic">
-                        Zapisz się na newsletter, by raz w miesiącu otrzymywać dawkę inspiracji o komunikacji i relacjach.
-                    </p>
-                    <NewsletterForm formId="D6dfkq" />
-                    <p className="mt-4 text-[8px] uppercase tracking-widest opacity-60 text-on-surface/70">Zapisując się na newsletter zgadzasz się otrzymywać informacje marketingowe.</p>
-                </div>
-                <div className="relative">
-                    <div className="rounded-[4rem_12rem_6rem_16rem] overflow-hidden shadow-2xl relative z-10 aspect-square">
-                        <img src="/images/22.png" alt="Ela Cwynar-Budzińska - Zostańmy w kontakcie" className="w-full h-full object-cover object-[center_15%] scale-[1.35] origin-top" />
-                    </div>
-                    <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl opacity-50 -z-10"></div>
-                </div>
-            </div>
-        </section>
+
       </main>
     </>
   );
