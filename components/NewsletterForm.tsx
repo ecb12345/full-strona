@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 export function NewsletterForm({ formId = "E23vqZ" }: { formId?: string }) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [mlLoaded, setMlLoaded] = useState(false);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -13,15 +14,27 @@ export function NewsletterForm({ formId = "E23vqZ" }: { formId?: string }) {
       };
       (window as any).ml('account', '2343740');
 
-      if (!document.getElementById("mailerlite-universal-js")) {
-        const script = document.createElement("script");
+      let script = document.getElementById("mailerlite-universal-js") as HTMLScriptElement;
+      if (!script) {
+        script = document.createElement("script");
         script.id = "mailerlite-universal-js";
         script.async = true;
         script.src = "https://assets.mailerlite.com/js/universal.js";
         document.head.appendChild(script);
       }
+
+      // Check if MailerLite successfully injected form
+      const checkML = setInterval(() => {
+        const container = document.querySelector(".ml-embedded");
+        if (container && container.children.length > 0) {
+          setMlLoaded(true);
+          clearInterval(checkML);
+        }
+      }, 500);
+
+      return () => clearInterval(checkML);
     }
-  }, []);
+  }, [formId]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -74,40 +87,42 @@ export function NewsletterForm({ formId = "E23vqZ" }: { formId?: string }) {
 
   return (
     <div className="w-full max-w-[700px] mx-auto">
-      {/* Hidden container for MailerLite universal JS hydration if active */}
-      <div className="ml-embedded hidden" data-form={formId}></div>
+      {/* MailerLite universal JS container */}
+      <div className="ml-embedded" data-form={formId}></div>
 
-      {/* Styled Native Form - Always Visible */}
-      <form 
-        onSubmit={handleSubmit}
-        className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full"
-      >
-        <div className="flex-grow w-full">
-          <input 
-            type="text" 
-            name="name" 
-            required 
-            placeholder="Imię" 
-            className="w-full h-[56px] px-8 bg-white/15 border border-white/30 rounded-xl text-white text-sm outline-none transition-all focus:bg-white/25 focus:border-white focus:ring-4 focus:ring-white/10 placeholder:text-white/70 placeholder:uppercase placeholder:tracking-[0.15em] placeholder:text-[10px] placeholder:font-bold" 
-          />
-        </div>
-        <div className="flex-grow w-full">
-          <input 
-            type="email" 
-            name="email" 
-            required 
-            placeholder="Email" 
-            className="w-full h-[56px] px-8 bg-white/15 border border-white/30 rounded-xl text-white text-sm outline-none transition-all focus:bg-white/25 focus:border-white focus:ring-4 focus:ring-white/10 placeholder:text-white/70 placeholder:uppercase placeholder:tracking-[0.15em] placeholder:text-[10px] placeholder:font-bold" 
-          />
-        </div>
-        <button 
-          type="submit" 
-          disabled={loading}
-          className="w-full sm:w-auto min-w-[180px] h-[56px] bg-white text-[#9a004a] rounded-xl px-8 font-extrabold uppercase tracking-[0.15em] text-[11px] hover:-translate-y-1 hover:shadow-2xl hover:bg-white/95 transition-all duration-300 flex items-center justify-center whitespace-nowrap disabled:opacity-50 cursor-pointer"
+      {/* Fallback form rendered if MailerLite form is not yet hydrated */}
+      {!mlLoaded && (
+        <form 
+          onSubmit={handleSubmit}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full mt-2"
         >
-          {loading ? "ZAPISYWANIE..." : "ZAPISZ SIĘ"}
-        </button>
-      </form>
+          <div className="flex-grow w-full">
+            <input 
+              type="text" 
+              name="name" 
+              required 
+              placeholder="Imię" 
+              className="w-full h-[56px] px-8 bg-white/15 border border-white/30 rounded-xl text-white text-sm outline-none transition-all focus:bg-white/25 focus:border-white focus:ring-4 focus:ring-white/10 placeholder:text-white/70 placeholder:uppercase placeholder:tracking-[0.15em] placeholder:text-[10px] placeholder:font-bold" 
+            />
+          </div>
+          <div className="flex-grow w-full">
+            <input 
+              type="email" 
+              name="email" 
+              required 
+              placeholder="Email" 
+              className="w-full h-[56px] px-8 bg-white/15 border border-white/30 rounded-xl text-white text-sm outline-none transition-all focus:bg-white/25 focus:border-white focus:ring-4 focus:ring-white/10 placeholder:text-white/70 placeholder:uppercase placeholder:tracking-[0.15em] placeholder:text-[10px] placeholder:font-bold" 
+            />
+          </div>
+          <button 
+            type="submit" 
+            disabled={loading}
+            className="w-full sm:w-auto min-w-[180px] h-[56px] bg-white text-[#9a004a] rounded-xl px-8 font-extrabold uppercase tracking-[0.15em] text-[11px] hover:-translate-y-1 hover:shadow-2xl hover:bg-white/95 transition-all duration-300 flex items-center justify-center whitespace-nowrap disabled:opacity-50 cursor-pointer"
+          >
+            {loading ? "ZAPISYWANIE..." : "ZAPISZ SIĘ"}
+          </button>
+        </form>
+      )}
     </div>
   );
 }
