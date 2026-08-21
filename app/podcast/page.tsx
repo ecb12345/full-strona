@@ -181,7 +181,7 @@ export default function Podcast() {
                     <p className="text-on-surface-variant text-lg leading-relaxed mb-12 italic">
                         Zapisz się na newsletter, by raz w miesiącu otrzymywać dawkę inspiracji o komunikacji i relacjach.
                     </p>
-                    <NewsletterForm formId="E23vqZ" />
+                    <NewsletterForm formId="D6dfkq" />
                     <p className="mt-4 text-[8px] uppercase tracking-widest opacity-60 text-on-surface/70">Zapisując się na newsletter zgadzasz się otrzymywać informacje marketingowe.</p>
                 </div>
                 <div className="relative">

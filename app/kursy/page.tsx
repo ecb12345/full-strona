@@ -218,7 +218,7 @@ export default function Kursy() {
                 <p className="mb-12 text-pink-100 opacity-90">
                     Zapisz się na newsletter, by raz w miesiącu otrzymywać dawkę inspiracji o komunikacji i relacjach.
                 </p>
-                <NewsletterForm formId="E23vqZ" />
+                <NewsletterForm formId="D6dfkq" />
                 <p className="mt-4 text-[8px] uppercase tracking-widest opacity-60 text-white/70">Zapisując się na newsletter zgadzasz się otrzymywać informacje marketingowe.</p>
             </div>
         </section>

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-export function NewsletterForm({ formId = "E23vqZ" }: { formId?: string }) {
+export function NewsletterForm({ formId = "D6dfkq" }: { formId?: string }) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [mlLoaded, setMlLoaded] = useState(false);
