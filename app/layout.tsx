@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Newsreader, Manrope } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -28,6 +29,15 @@ export default function RootLayout({
     <html lang="pl" className="scroll-smooth">
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+        <Script id="mailerlite-universal" strategy="afterInteractive">
+          {`
+            (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+            .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+            n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+            (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+            ml('account', '2343740');
+          `}
+        </Script>
       </head>
       <body className={`${newsreader.variable} ${manrope.variable} bg-surface text-on-surface font-body selection:bg-primary/20 antialiased text-base md:text-lg overflow-x-hidden flex flex-col min-h-screen`}>
         <svg className="mask-container" viewBox="0 0 100 100" style={{ width: 0, height: 0, position: 'absolute', pointerEvents: 'none' }}>
