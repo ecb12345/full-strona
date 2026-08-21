@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { NewsletterForm } from "@/components/NewsletterForm";
+
 
 export default function Home() {
   const [isModalSubmitted, setIsModalSubmitted] = useState(false);

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { NewsletterForm } from "@/components/NewsletterForm";
+
 
 export default function Kursy() {
   const [isModalSubmitted, setIsModalSubmitted] = useState(false);
@@ -267,9 +267,6 @@ export default function Kursy() {
                         </p>
                     </form>
                     )}
-                    </div>
-                    <div id="mailerlite-form" className="hidden mt-6">
-                        <NewsletterForm formId="IBUvda" />
                     </div>
                 </div>
             </div>

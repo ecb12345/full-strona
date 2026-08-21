@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { NewsletterForm } from "@/components/NewsletterForm";
+
 
 export default function Kontakt() {
   const [isSubmitted, setIsSubmitted] = useState(false);

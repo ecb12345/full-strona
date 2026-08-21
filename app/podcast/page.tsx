@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
-import { NewsletterForm } from "@/components/NewsletterForm";
+
 
 export default function Podcast() {
   useEffect(() => {
