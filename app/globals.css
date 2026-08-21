@@ -188,8 +188,8 @@ body.menu-open {
 .ml-embedded .ml-field-group input,
 .ml-embedded input[type="email"],
 .ml-embedded input[type="text"] {
-    background-color: rgba(255, 255, 255, 0.08) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
     border-radius: 12px !important; /* Matches less round aesthetic */
     color: #ffffff !important;
     padding: 0 2.5rem !important;
@@ -205,7 +205,7 @@ body.menu-open {
 }
 .ml-embedded .form-control::placeholder,
 .ml-embedded .ml-field-group input::placeholder {
-    color: rgba(255, 255, 255, 0.5) !important;
+    color: rgba(255, 255, 255, 0.7) !important;
     text-transform: uppercase !important;
     letter-spacing: 0.15em !important;
     font-size: 10px !important;
@@ -213,10 +213,10 @@ body.menu-open {
 }
 .ml-embedded .form-control:focus,
 .ml-embedded .ml-field-group input:focus {
-    background-color: rgba(255, 255, 255, 0.12) !important;
-    border-color: rgba(255, 255, 255, 0.6) !important;
+    background-color: rgba(255, 255, 255, 0.25) !important;
+    border-color: rgba(255, 255, 255, 0.8) !important;
     outline: none !important;
-    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.05) !important;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1) !important;
 }
 /* Submit Button Styling */
 .ml-embedded .ml-form-embedSubmit,
@@ -246,6 +246,10 @@ body.menu-open {
     align-items: center !important;
     justify-content: center !important;
     vertical-align: middle !important;
+}
+.ml-embedded button[type="submit"] *,
+.ml-embedded .ml-form-embedSubmit button * {
+    color: #9a004a !important;
 }
 .ml-embedded .ml-form-embedSubmit:hover,
 .ml-embedded button.primary:hover {

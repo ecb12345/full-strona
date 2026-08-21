@@ -4,24 +4,20 @@ import { useEffect } from "react";
 
 export function NewsletterForm({ formId = "E23vqZ" }: { formId?: string }) {
   useEffect(() => {
-    const initMailerLite = () => {
-      if (typeof window !== "undefined" && (window as any).ml) {
-        try {
-          (window as any).ml('account', '2343740');
-        } catch (err) {
-          console.error(err);
-        }
+    if (typeof window !== "undefined") {
+      (window as any).ml = (window as any).ml || function () {
+        ((window as any).ml.q = (window as any).ml.q || []).push(arguments);
+      };
+      (window as any).ml('account', '2343740');
+
+      if (!document.getElementById("mailerlite-universal-js")) {
+        const script = document.createElement("script");
+        script.id = "mailerlite-universal-js";
+        script.async = true;
+        script.src = "https://assets.mailerlite.com/js/universal.js";
+        document.head.appendChild(script);
       }
-    };
-
-    initMailerLite();
-    const timer1 = setTimeout(initMailerLite, 300);
-    const timer2 = setTimeout(initMailerLite, 1000);
-
-    return () => {
-      clearTimeout(timer1);
-      clearTimeout(timer2);
-    };
+    }
   }, [formId]);
 
   return (
