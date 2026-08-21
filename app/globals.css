@@ -144,14 +144,16 @@ body.menu-open {
   max-width: 700px !important;
   margin: 0 auto !important;
 }
-.ml-embedded * {
-  box-sizing: border-box !important;
-}
+
+/* Force transparency on all outer MailerLite containers */
+.ml-embedded *,
 .ml-form-embedWrapper, 
 .ml-form-embedBody, 
 .ml-form-embedContent, 
-.ml-form-formContent {
+.ml-form-formContent,
+.ml-form-embedSubmit {
   background: transparent !important;
+  background-color: transparent !important;
   border: none !important;
   box-shadow: none !important;
   padding: 0 !important;
@@ -165,34 +167,43 @@ body.menu-open {
   display: none !important;
 }
 
-/* Form Layout: Row on desktop, Column on mobile */
-.ml-block-form,
-.ml-form-horizontalRow,
-.ml-form-embedBody form {
+/* Form Layout: Column container */
+.ml-embedded form,
+.ml-block-form {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 1.25rem !important;
+  width: 100% !important;
+}
+
+/* Wrapper for Fields + Button (Row on Desktop, Column on Mobile) */
+.ml-form-formContent,
+.ml-form-horizontalRow {
   display: flex !important;
   flex-direction: column !important;
   gap: 1rem !important;
+  width: 100% !important;
   align-items: center !important;
   justify-content: center !important;
-  width: 100% !important;
 }
 @media (min-width: 640px) {
-  .ml-block-form,
-  .ml-form-horizontalRow,
-  .ml-form-embedBody form {
+  .ml-form-formContent,
+  .ml-form-horizontalRow {
     flex-direction: row !important;
     align-items: flex-start !important;
   }
 }
 
-.ml-field-group, .ml-form-fieldRow {
+/* Email Input Field */
+.ml-form-fieldRow {
   flex-grow: 1 !important;
   width: 100% !important;
   margin: 0 !important;
   padding: 0 !important;
 }
 
-/* Input Fields (Email & Text) - White background with dark text for crystal clear readability */
 .ml-embedded input[type="email"],
 .ml-embedded input[type="text"],
 .ml-embedded .form-control {
@@ -221,7 +232,18 @@ body.menu-open {
   font-weight: 700 !important;
 }
 
-/* Submit Button */
+/* Submit Button Wrapper & Button */
+.ml-form-embedSubmit {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+@media (min-width: 640px) {
+  .ml-form-embedSubmit {
+    width: auto !important;
+  }
+}
+
 .ml-embedded button[type="submit"],
 .ml-embedded .ml-form-embedSubmit button,
 .ml-embedded .primary {
@@ -229,7 +251,7 @@ body.menu-open {
   color: #9a004a !important;
   border: none !important;
   border-radius: 12px !important;
-  padding: 0 2rem !important;
+  padding: 0 2.5rem !important;
   font-family: var(--font-body), 'Manrope', sans-serif !important;
   font-weight: 800 !important;
   font-size: 11px !important;
@@ -243,7 +265,7 @@ body.menu-open {
   height: 54px !important;
   line-height: 54px !important;
   white-space: nowrap !important;
-  display: flex !important;
+  display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
 }
@@ -264,18 +286,26 @@ body.menu-open {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3) !important;
 }
 
-/* Consent Checkbox and Text legibility on pink section */
-.ml-embedded .ml-form-checkboxRow,
-.ml-embedded .ml-form-embedPermissions,
+/* Consent Text & Checkbox - Moved Below Inputs & Button */
+.ml-form-checkboxRow,
+.ml-form-embedPermissions,
+.ml-form-interestGroupRow,
+.ml-form-fieldRow:has(label) {
+  width: 100% !important;
+  order: 10 !important; /* Force to bottom */
+  margin-top: 0.5rem !important;
+  text-align: center !important;
+}
+
+.ml-embedded .ml-form-checkboxRow label,
+.ml-embedded .ml-form-embedPermissions p,
 .ml-embedded label,
 .ml-embedded p,
 .ml-embedded span {
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
   font-size: 11px !important;
   line-height: 1.5 !important;
-}
-.ml-embedded .ml-form-checkboxRow label {
-  cursor: pointer !important;
+  text-align: center !important;
 }
 .ml-error {
   font-size: 10px !important;
